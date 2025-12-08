@@ -1,6 +1,6 @@
 ---
 const pageTitle =
-  "Junseok Bae, MD, PhD – Endoscopic & Minimally Invasive Spine Surgeon";
+  "Junseok Bae, MD – Endoscopic & Minimally Invasive Spine Surgeon";
 const pageDescription =
   "Dr. Junseok Bae is a spine surgeon specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression, minimally invasive spine surgery, and data-driven clinical decision support.";
 const siteUrl = "https://junspine.com";
@@ -12,25 +12,168 @@ const siteUrl = "https://junspine.com";
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <link rel="canonical" href={siteUrl} />
 
-    {/* ✅ Tailwind CDN 추가 – 이게 없어서 글씨만 보였던 것 */}
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 기본 스타일: 외부 CSS / Tailwind 사용 안 함 -->
+    <style>
+      :root {
+        --bg: #f5f5f7;
+        --surface: #ffffff;
+        --border: #e0e0e5;
+        --text-main: #111827;
+        --text-muted: #4b5563;
+        --accent: #2563eb;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text-main);
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .page {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px 16px 40px;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .brand-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .brand-sub {
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-top: 4px;
+      }
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+      }
+      nav a {
+        padding: 4px 0;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 0 0 8px;
+      }
+      h2 {
+        font-size: 20px;
+        margin: 0 0 12px;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+      h3 {
+        font-size: 18px;
+        margin: 0 0 12px;
+        font-weight: 600;
+      }
+      h4 {
+        font-size: 14px;
+        margin: 0 0 8px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0;
+      }
+      .section {
+        margin-bottom: 40px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .chip {
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        padding: 4px 12px;
+        font-size: 11px;
+        color: var(--text-muted);
+        background: #ffffff;
+      }
+      .list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+        color: var(--text-main);
+      }
+      .list li {
+        margin-bottom: 4px;
+      }
+      .grid-2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+      }
+      @media (min-width: 768px) {
+        .grid-2 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+      .card {
+        background: var(--surface);
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        padding: 16px;
+      }
+      .card-meta {
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+      .card-text {
+        margin-top: 6px;
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+      .section-intro {
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+      }
+      footer {
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+        font-size: 11px;
+        color: var(--text-muted);
+      }
+    </style>
 
-    {/* Open Graph */}
+    <!-- OG / Twitter -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:site_name" content="Junseok Bae, MD, PhD" />
-
-    {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
 
-    {/* schema.org JSON-LD */}
+    <!-- schema.org JSON-LD -->
     <script type="application/ld+json">
       {JSON.stringify(
         [
@@ -98,18 +241,18 @@ const siteUrl = "https://junspine.com";
             ],
             worksFor: {
               "@type": "MedicalOrganization",
-              name: "Wooridul Spine Hospital"
+              name: "Cheongdam Wooridul Spine Hospital"
             },
             alumniOf: [
               {
                 "@type": "CollegeOrUniversity",
-                name: "Kyungpook National University",
-                sameAs: "https://www.knu.ac.kr"
+                name: "Johns Hopkins University",
+                sameAs: "https://www.jhu.edu"
               }
             ],
             award: [
               "Parviz Kambin Award (2022)",
-              "Best Paper Award - SMISS (2016)"
+              "Fulbright Fellowship – Addis Ababa University"
             ],
             hasOccupation: {
               "@type": "Occupation",
@@ -139,7 +282,7 @@ const siteUrl = "https://junspine.com";
             mainEntityOfPage: siteUrl
           },
 
-          /* Endoscopic procedures */
+          /* Procedures */
           {
             "@context": "https://schema.org",
             "@type": "MedicalProcedure",
@@ -177,7 +320,7 @@ const siteUrl = "https://junspine.com";
             procedureType: "Endoscopic cervical spine surgery"
           },
 
-          /* Key scholarly articles (representative selection) */
+          /* Representative articles */
           {
             "@context": "https://schema.org",
             "@type": "ScholarlyArticle",
@@ -331,36 +474,8 @@ const siteUrl = "https://junspine.com";
               "Risk prediction calculator"
             ]
           },
-          {
-            "@context": "https://schema.org",
-            "@type": "ScholarlyArticle",
-            name: "Transforaminal Endoscopic Thoracic Discectomy Is More Cost-Effective Than Microdiscectomy for Symptomatic Disc Herniations",
-            author: [
-              {
-                "@id": `${siteUrl}#junseok-bae`,
-                "@type": "Person",
-                name: "Junseok Bae"
-              }
-            ],
-            datePublished: "2025",
-            isPartOf: {
-              "@type": "Periodical",
-              name: "Neurospine"
-            },
-            identifier: {
-              "@type": "PropertyValue",
-              propertyID: "DOI",
-              value: "10.14245/ns.2449414.707"
-            },
-            about: [
-              "Transforaminal endoscopic thoracic discectomy",
-              "Cost-effectiveness",
-              "Thoracic disc herniation",
-              "Health economics"
-            ]
-          },
 
-          /* FAQPage schema for endoscopic spine surgery */
+          /* FAQPage */
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -438,7 +553,7 @@ const siteUrl = "https://junspine.com";
             ]
           },
 
-          /* Site navigation schema with main sections */
+          /* Navigation + breadcrumbs */
           {
             "@context": "https://schema.org",
             "@type": "SiteNavigationElement",
@@ -459,8 +574,6 @@ const siteUrl = "https://junspine.com";
               `${siteUrl}#faq`
             ]
           },
-
-          /* Breadcrumbs for the patients/FAQ path on the homepage */
           {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
@@ -492,492 +605,373 @@ const siteUrl = "https://junspine.com";
     </script>
   </head>
 
-  <body class="min-h-screen bg-neutral-50 text-neutral-900">
-    <main class="mx-auto max-w-5xl px-4 py-8">
-      {/* Top navigation */}
-      <header class="mb-8 flex flex-wrap items-center justify-between gap-4">
+  <body>
+    <main class="page">
+      <header>
         <div>
-          <div class="text-lg font-semibold tracking-tight">
-            Junseok Bae, MD, PhD
-          </div>
-          <div class="text-xs text-neutral-600">
-            Endoscopic & Minimally Invasive Spine Surgeon
-          </div>
+          <div class="brand-title">Junseok Bae, MD, PhD</div>
+          <div class="brand-sub">Endoscopic &amp; Minimally Invasive Spine Surgeon</div>
         </div>
-        <nav class="text-xs text-neutral-700">
-          <ul class="flex flex-wrap gap-3">
-            <li>
-              <a href="#clinical-expertise" class="hover:underline">
-                Clinical Expertise
-              </a>
-            </li>
-            <li>
-              <a href="#research" class="hover:underline">
-                Research
-              </a>
-            </li>
-            <li>
-              <a href="#lectures" class="hover:underline">
-                Lectures
-              </a>
-            </li>
-            <li>
-              <a href="#patients" class="hover:underline">
-                Patients
-              </a>
-            </li>
-            <li>
-              <a href="#faq" class="hover:underline">
-                FAQ
-              </a>
-            </li>
+        <nav>
+          <ul>
+            <li><a href="#clinical-expertise">Clinical Expertise</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#lectures">Lectures</a></li>
+            <li><a href="#patients">Patients</a></li>
+            <li><a href="#faq">FAQ</a></li>
           </ul>
         </nav>
       </header>
 
-      {/* Hero / Intro */}
-      <section class="mb-10 space-y-4">
-        <h1 class="text-3xl font-bold tracking-tight">
-          Junseok Bae, MD, PhD
-        </h1>
-        <h2 class="text-xl font-semibold text-neutral-700">
-          Endoscopic & Minimally Invasive Spine Surgery
-        </h2>
-        <p class="max-w-2xl text-sm leading-relaxed text-neutral-700">
-          Dr. Junseok Bae is a spine surgeon based in Seoul, Republic of Korea.
-          His clinical focus is on endoscopic lumbar, thoracic, and cervical
-          (anterior and posterior) decompression and minimally invasive spine
-          surgery, with a particular interest in thoracic endoscopy with
-          navigation (TETD), motion-preserving cervical procedures, and
-          data-driven decision support in adult spinal deformity.
+      <section class="section">
+        <h1>Junseok Bae, MD, PhD</h1>
+        <h2>Endoscopic &amp; Minimally Invasive Spine Surgery</h2>
+        <p>
+          Dr. Junseok Bae is a spine surgeon based in Seoul, Republic of Korea. His clinical
+          focus is on endoscopic lumbar, thoracic, and cervical (anterior and posterior)
+          decompression and minimally invasive spine surgery, with a particular interest in
+          thoracic endoscopy with navigation (TETD), motion-preserving cervical procedures,
+          and data-driven decision support in adult spinal deformity.
         </p>
-
-        <div class="flex flex-wrap gap-3 text-xs text-neutral-700">
-          <span class="rounded-full border px-3 py-1">
-            Cheongdam Wooridul Spine Hospital
-          </span>
-          <span class="rounded-full border px-3 py-1">
-            Lumbar / Thoracic / Cervical Endoscopic Surgery
-          </span>
-          <span class="rounded-full border px-3 py-1">
-            Adult Spinal Deformity & MIS
-          </span>
+        <p style="margin-top:8px; font-size:13px; color:var(--text-muted);">
+          Cheongdam Wooridul Spine Hospital &middot; Lumbar / Thoracic / Cervical Endoscopic
+          Surgery &middot; Adult Spinal Deformity &amp; MIS
+        </p>
+        <div class="chips">
+          <span class="chip">Cheongdam Wooridul Spine Hospital</span>
+          <span class="chip">Lumbar / Thoracic / Cervical Endoscopic Surgery</span>
+          <span class="chip">Adult Spinal Deformity &amp; MIS</span>
         </div>
       </section>
 
-      {/* Key Facts */}
-      <section class="mb-10 space-y-3">
-        <h3 class="text-lg font-semibold">Key Facts</h3>
-        <ul class="space-y-1.5 list-disc pl-5 text-sm text-neutral-800">
+      <section class="section">
+        <h3>Key Facts</h3>
+        <ul class="list">
           <li>
-            Spine surgeon specializing in endoscopic lumbar, thoracic, and
-            cervical (anterior and posterior) decompression with a focus on
-            minimizing tissue damage and preserving motion.
+            Spine surgeon specializing in endoscopic lumbar, thoracic, and cervical
+            (anterior and posterior) decompression with a focus on minimizing tissue damage
+            and preserving motion.
           </li>
           <li>
-            Contributor to the development and refinement of thoracic endoscopy
-            with navigation (TETD) and cost-effective endoscopic approaches for
-            thoracic disc pathology.
+            Contributor to the development and refinement of thoracic endoscopy with
+            navigation (TETD) and cost-effective endoscopic approaches for thoracic disc
+            pathology.
           </li>
           <li>
-            Recipient of the <strong>Parviz Kambin Award (2022)</strong> for
-            contributions to endoscopic spine surgery.
+            Recipient of the <strong>Parviz Kambin Award (2022)</strong> for contributions
+            to endoscopic spine surgery.
           </li>
           <li>
-            Active in international education through KOMISS, KOSESS, SMISS
-            Asia-Pacific, ESPINEA, and NSpine.
+            Active in international education through KOMISS, KOSESS, SMISS Asia-Pacific,
+            ESPINEA, and NSpine.
           </li>
         </ul>
       </section>
 
-      {/* Clinical Expertise */}
-      <section class="mb-12 space-y-4" id="clinical-expertise">
-        <h3 class="text-lg font-semibold">Clinical Expertise</h3>
-
-        <div class="grid gap-4 md:grid-cols-2 text-sm">
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">Endoscopic Lumbar Surgery</h4>
-            <ul class="list-disc pl-5 space-y-1">
+      <section class="section" id="clinical-expertise">
+        <h3>Clinical Expertise</h3>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Endoscopic Lumbar Surgery</h4>
+            <ul class="list">
               <li>Endoscopic lumbar discectomy (uniportal / biportal)</li>
               <li>Endoscopic lumbar decompression for spinal stenosis</li>
               <li>Management of recurrent lumbar disc herniation</li>
             </ul>
           </div>
-
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">Endoscopic Thoracic Surgery</h4>
-            <ul class="list-disc pl-5 space-y-1">
+          <div class="card">
+            <h4>Endoscopic Thoracic Surgery</h4>
+            <ul class="list">
               <li>Thoracic endoscopy with navigation (TETD)</li>
               <li>Endoscopic thoracic decompression for myelopathy</li>
-              <li>
-                Minimally invasive strategies for complex thoracic disc
-                herniation
-              </li>
+              <li>Minimally invasive strategies for complex thoracic disc herniation</li>
             </ul>
           </div>
-
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">
-              Endoscopic Cervical Surgery (Anterior)
-            </h4>
-            <ul class="list-disc pl-5 space-y-1">
+          <div class="card">
+            <h4>Endoscopic Cervical Surgery (Anterior)</h4>
+            <ul class="list">
               <li>Anterior endoscopic cervical decompression</li>
               <li>Motion-preserving anterior cervical foraminotomy</li>
               <li>Selective disc and foraminal decompression</li>
             </ul>
           </div>
-
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">
-              Endoscopic Cervical Surgery (Posterior)
-            </h4>
-            <ul class="list-disc pl-5 space-y-1">
+          <div class="card">
+            <h4>Endoscopic Cervical Surgery (Posterior)</h4>
+            <ul class="list">
               <li>Posterior endoscopic cervical foraminotomy</li>
               <li>Posterior endoscopic cervical decompression</li>
-              <li>
-                Minimally invasive posterior decompression for radiculopathy
-              </li>
+              <li>Minimally invasive posterior decompression for radiculopathy</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Academic & Lectures */}
-      <section class="mb-12 space-y-4" id="lectures">
-        <h3 class="text-lg font-semibold">Academic & Teaching Activities</h3>
-
-        <div class="grid gap-4 md:grid-cols-2 text-sm">
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">Societies & Roles</h4>
-            <ul class="list-disc pl-5 space-y-1">
-              <li>
-                Member, KOMISS (Korean Minimally Invasive Spine Surgery Society)
-              </li>
-              <li>
-                Member, KOSESS (Korean Society of Endoscopic Spine Surgery)
-              </li>
+      <section class="section" id="lectures">
+        <h3>Academic &amp; Teaching Activities</h3>
+        <div class="grid-2">
+          <div class="card">
+            <h4>Societies &amp; Roles</h4>
+            <ul class="list">
+              <li>Member, KOMISS (Korean Minimally Invasive Spine Surgery Society)</li>
+              <li>Member, KOSESS (Korean Society of Endoscopic Spine Surgery)</li>
               <li>Faculty, SMISS Asia-Pacific</li>
               <li>
-                Faculty / member, ESPINEA –{" "}
-                <a
-                  href="https://www.espinea.org"
-                  class="text-blue-600 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                Faculty / member, ESPINEA &ndash;
+                <a href="https://www.espinea.org" target="_blank" rel="noopener noreferrer">
                   www.espinea.org
                 </a>
               </li>
               <li>
-                Faculty / member, NSpine –{" "}
-                <a
-                  href="https://www.nspine.com"
-                  class="text-blue-600 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                Faculty / member, NSpine &ndash;
+                <a href="https://www.nspine.com" target="_blank" rel="noopener noreferrer">
                   www.nspine.com
                 </a>
               </li>
             </ul>
           </div>
-
-          <div class="rounded-lg border bg-white p-4">
-            <h4 class="mb-2 font-semibold">International Teaching</h4>
-            <ul class="list-disc pl-5 space-y-1">
+          <div class="card">
+            <h4>International Teaching</h4>
+            <ul class="list">
               <li>
-                Faculty at hands-on courses for lumbar, thoracic, and cervical
-                endoscopic surgery.
+                Faculty at hands-on courses for lumbar, thoracic, and cervical endoscopic
+                surgery.
               </li>
               <li>
-                Lectures on thoracic endoscopy with navigation, MIS deformity
-                strategies, and endoscopic economics.
+                Lectures on thoracic endoscopy with navigation, MIS deformity strategies,
+                and endoscopic economics.
               </li>
               <li>
-                Participation in global consensus work on the economics and
-                adoption of endoscopic spine surgery.
+                Participation in global consensus work on the economics and adoption of
+                endoscopic spine surgery.
               </li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Featured Research */}
-      <section class="mb-12 space-y-4" id="research">
-        <h3 class="text-lg font-semibold">Featured Research</h3>
-        <p class="text-sm text-neutral-700">
-          Selected peer-reviewed work on endoscopic spine surgery, adult spinal
-          deformity, and machine learning–based risk prediction.
+      <section class="section" id="research">
+        <h3>Featured Research</h3>
+        <p class="section-intro">
+          Selected peer-reviewed work on endoscopic spine surgery, adult spinal deformity,
+          and machine learning–based risk prediction.
         </p>
 
-        {/* Endoscopic Spine Surgery */}
-        <div class="space-y-3">
-          <h4 class="text-sm font-semibold text-neutral-800">
-            Endoscopic Spine Surgery
-          </h4>
-          <ul class="space-y-3 text-sm">
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Percutaneous Endoscopic Thoracic Discectomy in the Upper and
-                Midthoracic Spine: A Technical Note
-              </div>
-              <div class="text-xs text-neutral-600">
-                Neurospine, 2019
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Technical description and clinical outcomes of percutaneous
-                transforaminal endoscopic thoracic discectomy in the upper and
-                midthoracic spine, expanding the indications of full endoscopic
-                surgery beyond the lumbar region.
-              </p>
-            </li>
-
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Transforaminal Endoscopic Thoracic Discectomy with
-                Foraminoplasty for the Treatment of Thoracic Disc Herniation
-              </div>
-              <div class="text-xs text-neutral-600">
-                Journal of Spine Surgery, 2020
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Describes transforaminal endoscopic thoracic discectomy (TETD)
-                with foraminoplasty for symptomatic thoracic disc herniation,
-                focusing on safe access, decompression, and complication
-                avoidance.
-              </p>
-            </li>
-
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Percutaneous Transforaminal Endoscopic Lumbar Interbody Fusion:
-                Clinical and Radiological Results of Mean 46-Month Follow-Up
-              </div>
-              <div class="text-xs text-neutral-600">
-                BioMed Research International, 2017
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Reports mid-term clinical and radiological results of
-                percutaneous transforaminal endoscopic lumbar interbody fusion,
-                demonstrating the durability of endoscopic fusion techniques in
-                degenerative lumbar disease.
-              </p>
-            </li>
-          </ul>
+        <h4>Endoscopic Spine Surgery</h4>
+        <div class="grid-2" style="margin-bottom:16px;">
+          <div class="card">
+            <div class="card-title">
+              Percutaneous Endoscopic Thoracic Discectomy in the Upper and Midthoracic
+              Spine: A Technical Note
+            </div>
+            <div class="card-meta">Neurospine, 2019</div>
+            <p class="card-text">
+              Technical description and clinical outcomes of percutaneous transforaminal
+              endoscopic thoracic discectomy in the upper and midthoracic spine, expanding
+              the indications of full endoscopic surgery beyond the lumbar region.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Transforaminal Endoscopic Thoracic Discectomy with Foraminoplasty for the
+              Treatment of Thoracic Disc Herniation
+            </div>
+            <div class="card-meta">Journal of Spine Surgery, 2020</div>
+            <p class="card-text">
+              Describes transforaminal endoscopic thoracic discectomy (TETD) with
+              foraminoplasty for symptomatic thoracic disc herniation, focusing on safe
+              access, decompression, and complication avoidance.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Percutaneous Transforaminal Endoscopic Lumbar Interbody Fusion: Clinical and
+              Radiological Results of Mean 46-Month Follow-Up
+            </div>
+            <div class="card-meta">BioMed Research International, 2017</div>
+            <p class="card-text">
+              Reports mid-term clinical and radiological results of percutaneous
+              transforaminal endoscopic lumbar interbody fusion, demonstrating the
+              durability of endoscopic fusion techniques in degenerative lumbar disease.
+            </p>
+          </div>
         </div>
 
-        {/* Cervical & Deformity */}
-        <div class="space-y-3">
-          <h4 class="text-sm font-semibold text-neutral-800">
-            Cervical & Adult Spinal Deformity
-          </h4>
-          <ul class="space-y-3 text-sm">
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Comparison of Anterior Cervical Foraminotomy and Posterior
-                Cervical Foraminotomy for Treating Single Level Unilateral
-                Cervical Radiculopathy
-              </div>
-              <div class="text-xs text-neutral-600">
-                Spine, 2019
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Compares anterior and posterior cervical foraminotomy as
-                motion-preserving alternatives for single-level unilateral
-                cervical radiculopathy, analyzing clinical and radiologic
-                outcomes and approach-specific benefits.
-              </p>
-            </li>
-
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Minimally Invasive Spinal Surgery for Adult Spinal Deformity
-              </div>
-              <div class="text-xs text-neutral-600">
-                Neurospine, 2018
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Reviews minimally invasive strategies for adult spinal deformity
-                surgery, including staged and hybrid constructs, and discusses
-                when MIS deformity surgery can achieve comparable outcomes to
-                open techniques.
-              </p>
-            </li>
-          </ul>
+        <h4>Cervical &amp; Adult Spinal Deformity</h4>
+        <div class="grid-2" style="margin-bottom:16px;">
+          <div class="card">
+            <div class="card-title">
+              Comparison of Anterior Cervical Foraminotomy and Posterior Cervical
+              Foraminotomy for Treating Single Level Unilateral Cervical Radiculopathy
+            </div>
+            <div class="card-meta">Spine, 2019</div>
+            <p class="card-text">
+              Compares anterior and posterior cervical foraminotomy as motion-preserving
+              alternatives for single-level unilateral cervical radiculopathy, analyzing
+              clinical and radiologic outcomes and approach-specific benefits.
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Minimally Invasive Spinal Surgery for Adult Spinal Deformity
+            </div>
+            <div class="card-meta">Neurospine, 2018</div>
+            <p class="card-text">
+              Reviews minimally invasive strategies for adult spinal deformity surgery,
+              including staged and hybrid constructs, and discusses when MIS deformity
+              surgery can achieve comparable outcomes to open techniques.
+            </p>
+          </div>
         </div>
 
-        {/* Machine Learning & Economics */}
-        <div class="space-y-3">
-          <h4 class="text-sm font-semibold text-neutral-800">
-            Machine Learning & Economics
-          </h4>
-          <ul class="space-y-3 text-sm">
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Development and Validation of an Online Calculator to Predict
-                Proximal Junctional Kyphosis After Adult Spinal Deformity
-                Surgery Using Machine Learning
-              </div>
-              <div class="text-xs text-neutral-600">
-                Neurospine, 2023
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Uses machine learning models trained on a Korean adult spinal
-                deformity database to build an individualized PJK risk
-                calculator, supporting more precise preoperative planning and
-                risk communication.
-              </p>
-              <p class="mt-1 text-xs text-neutral-600">
-                Online tool:{" "}
-                <a
-                  href="https://snuspine.shinyapps.io/PJKafterASD/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-blue-600 underline"
-                >
-                  PJKafterASD calculator
-                </a>
-              </p>
-            </li>
-
-            <li class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Transforaminal Endoscopic Thoracic Discectomy Is More
-                Cost-Effective Than Microdiscectomy for Symptomatic Disc
-                Herniations
-              </div>
-              <div class="text-xs text-neutral-600">
-                Neurospine, 2025
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Compares the cost-effectiveness of transforaminal endoscopic
-                thoracic discectomy with conventional microdiscectomy for
-                thoracic disc herniation, linking clinical outcomes with
-                economic impact.
-              </p>
-            </li>
-          </ul>
+        <h4>Machine Learning &amp; Economics</h4>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">
+              Development and Validation of an Online Calculator to Predict Proximal
+              Junctional Kyphosis After Adult Spinal Deformity Surgery Using Machine
+              Learning
+            </div>
+            <div class="card-meta">Neurospine, 2023</div>
+            <p class="card-text">
+              Uses machine learning models trained on a Korean adult spinal deformity
+              database to build an individualized PJK risk calculator, supporting more
+              precise preoperative planning and risk communication.
+            </p>
+            <p class="card-text">
+              Online tool:
+              <a
+                href="https://snuspine.shinyapps.io/PJKafterASD/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {" "}
+                PJKafterASD calculator
+              </a>
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Transforaminal Endoscopic Thoracic Discectomy Is More Cost-Effective Than
+              Microdiscectomy for Symptomatic Disc Herniations
+            </div>
+            <div class="card-meta">Neurospine, 2025</div>
+            <p class="card-text">
+              Compares the cost-effectiveness of transforaminal endoscopic thoracic
+              discectomy with conventional microdiscectomy for thoracic disc herniation,
+              linking clinical outcomes with economic impact.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Patients & FAQ */}
-      <section class="mb-12 space-y-4" id="patients">
-        <h3 class="text-lg font-semibold">Information for Patients</h3>
-        <p class="text-sm text-neutral-700">
-          The following questions summarize how endoscopic spine surgery is
-          typically applied in clinical practice. Answers are general
-          information and do not replace an in-person consultation or
-          individualized medical advice.
+      <section class="section" id="patients">
+        <h3>Information for Patients</h3>
+        <p class="section-intro">
+          The following questions summarize how endoscopic spine surgery is typically
+          applied in clinical practice. Answers are general information and do not replace
+          an in-person consultation or individualized medical advice.
         </p>
 
-        <section class="space-y-3" id="faq">
-          <h4 class="text-sm font-semibold text-neutral-800">
-            Endoscopic Spine Surgery – FAQ
-          </h4>
-          <div class="space-y-3 text-sm">
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Which patients are candidates for anterior endoscopic cervical
-                decompression?
+        <section id="faq">
+          <h4>Endoscopic Spine Surgery – FAQ</h4>
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-title">
+                Which patients are candidates for anterior endoscopic cervical decompression?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Patients with cervical disc herniation or foraminal stenosis
-                causing arm pain or radiculopathy, who have persistent symptoms
-                despite conservative treatment and have pathology limited to a
-                small number of levels without severe deformity or instability,
-                may be considered for anterior endoscopic decompression.
+              <p class="card-text">
+                Patients with cervical disc herniation or foraminal stenosis causing arm
+                pain or radiculopathy, who have persistent symptoms despite conservative
+                treatment and have pathology limited to a small number of levels without
+                severe deformity or instability, may be considered for anterior endoscopic
+                decompression.
               </p>
             </div>
 
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                When is posterior endoscopic cervical foraminotomy preferred
-                over anterior approaches?
+            <div class="card">
+              <div class="card-title">
+                When is posterior endoscopic cervical foraminotomy preferred over anterior
+                approaches?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Posterior endoscopic cervical foraminotomy is often chosen for
-                lateral or foraminal stenosis in patients with preserved
-                cervical alignment when motion preservation is important and
-                central disc compression is limited.
+              <p class="card-text">
+                Posterior endoscopic cervical foraminotomy is often chosen for lateral or
+                foraminal stenosis in patients with preserved cervical alignment when motion
+                preservation is important and central disc compression is limited.
               </p>
             </div>
 
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                What are the advantages of endoscopic thoracic decompression
-                compared with open surgery?
+            <div class="card">
+              <div class="card-title">
+                What are the advantages of endoscopic thoracic decompression compared with
+                open surgery?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
+              <p class="card-text">
                 Endoscopic thoracic decompression can reduce muscle damage and
-                postoperative pain, shorten hospital stay, and avoid many
-                thoracotomy-related complications, while still providing
-                effective decompression in properly selected cases.
+                postoperative pain, shorten hospital stay, and avoid many thoracotomy-related
+                complications, while still providing effective decompression in properly
+                selected cases.
               </p>
             </div>
 
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Is endoscopic lumbar discectomy effective for recurrent disc
-                herniation?
+            <div class="card">
+              <div class="card-title">
+                Is endoscopic lumbar discectomy effective for recurrent disc herniation?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Yes. In many patients, endoscopic lumbar discectomy offers a
-                targeted way to remove recurrent disc fragments while limiting
-                scar dissection and preserving stabilizing structures, which can
-                be advantageous compared with repeat open surgery.
+              <p class="card-text">
+                In many patients, endoscopic lumbar discectomy offers a targeted way to
+                remove recurrent disc fragments while limiting scar dissection and
+                preserving stabilizing structures, which can be advantageous compared with
+                repeat open surgery.
               </p>
             </div>
 
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                What is the typical recovery timeline after endoscopic cervical
-                or thoracic surgery?
-              </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Many patients are able to walk on the same day or the next day,
-                resume light daily activities within several days, and return to
-                normal function within a few weeks, depending on the level
-                treated, the underlying condition, and overall health.
-              </p>
-            </div>
-
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                Are there patients who should not undergo endoscopic spine
+            <div class="card">
+              <div class="card-title">
+                What is the typical recovery timeline after endoscopic cervical or thoracic
                 surgery?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                Patients with severe spinal instability, significant deformity
-                requiring realignment, active infection, or tumors requiring
-                wider resection are generally not good candidates for endoscopic
-                surgery and may need more extensive procedures.
+              <p class="card-text">
+                Many patients are able to walk on the same day or the next day, resume
+                light daily activities within several days, and return to normal function
+                within a few weeks, depending on the level treated, the underlying
+                condition, and overall health.
               </p>
             </div>
 
-            <div class="rounded-lg border bg-white p-4">
-              <div class="font-semibold">
-                How does endoscopic surgery compare to fusion surgery for motion
-                preservation?
+            <div class="card">
+              <div class="card-title">
+                Are there patients who should not undergo endoscopic spine surgery?
               </div>
-              <p class="mt-1 text-xs text-neutral-700">
-                When appropriate, endoscopic surgery removes the compressive
-                pathology while preserving motion segments, reducing the risk of
-                stiffness and adjacent segment degeneration that can occur after
-                fusion.
+              <p class="card-text">
+                Patients with severe spinal instability, significant deformity requiring
+                realignment, active infection, or tumors requiring wider resection are
+                generally not good candidates for endoscopic surgery and may need more
+                extensive procedures.
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-title">
+                How does endoscopic surgery compare to fusion surgery for motion preservation?
+              </div>
+              <p class="card-text">
+                When appropriate, endoscopic surgery removes the compressive pathology
+                while preserving motion segments, reducing the risk of stiffness and
+                adjacent segment degeneration that can occur after fusion.
               </p>
             </div>
           </div>
         </section>
       </section>
 
-      {/* Footer */}
-      <footer class="border-t pt-6 text-xs text-neutral-500 space-y-2">
+      <footer>
         <div>Based in Seoul, Republic of Korea.</div>
         <div>
-          For academic collaboration or invitations, please contact through
-          professional channels (hospital or society network).
+          For academic collaboration or invitations, please contact through professional
+          channels (hospital or society network).
         </div>
       </footer>
     </main>
   </body>
 </html>
+

@@ -8,6 +8,86 @@ const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.prop
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
 
+    <!-- Basic meta -->
+    <meta
+      name="description"
+      content="Junspine.com is the academic portfolio of Junseok Bae, MD, a spine surgeon specializing in endoscopic spine surgery, cervical disc arthroplasty, thoracic endoscopy, and adult spinal deformity (ASD) at Cheongdam Wooridul Spine Hospital, Seoul, Korea."
+    />
+    <meta name="author" content="Junseok Bae, MD" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Junspine | Endoscopic & Deformity Spine Surgery" />
+    <meta
+      property="og:description"
+      content="Academic portfolio of Junseok Bae, MD – research, publications, and global education in endoscopic spine surgery, cervical disc arthroplasty, thoracic endoscopy, and adult spinal deformity (ASD)."
+    />
+    <meta property="og:url" content="https://junspine.com" />
+    <!-- 나중에 썸네일 이미지 만들면 이 부분 교체 -->
+    <meta property="og:image" content="https://junspine.com/og-image.jpg" />
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Junspine | Endoscopic & Deformity Spine Surgery" />
+    <meta
+      name="twitter:description"
+      content="Academic portfolio of Junseok Bae, MD – research, publications, and global education in endoscopic and deformity spine surgery."
+    />
+    <meta name="twitter:image" content="https://junspine.com/og-image.jpg" />
+
+    <!-- Schema.org: Person + MedicalOrganization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@id": "#junseok-bae",
+            "@type": "Person",
+            "name": "Junseok Bae, MD",
+            "jobTitle": "Spine Surgeon",
+            "description": "Spine surgeon specializing in endoscopic spine surgery, cervical disc arthroplasty, thoracic endoscopy, and adult spinal deformity (ASD).",
+            "affiliation": {
+              "@id": "#cheongdam-wooridul"
+            },
+            "url": "https://junspine.com",
+            "knowsAbout": [
+              "Endoscopic spine surgery",
+              "Cervical disc arthroplasty",
+              "Adult spinal deformity",
+              "Degenerative scoliosis",
+              "Sagittal imbalance",
+              "Thoracic endoscopy",
+              "Navigation-assisted spine surgery",
+              "AR/VR head-mounted displays in spine surgery"
+            ],
+            "memberOf": [
+              "Scoliosis Research Society (SRS)",
+              "Korean Minimally Invasive Spine Surgery Society (KOMISS)",
+              "Korean Society of Endoscopic Spine Surgery (KOSESS)",
+              "SMISS Asia-Pacific",
+              "ISSLS"
+            ],
+            "sameAs": [
+              "https://https://scholar.google.co.kr/citations?user=UeAj8f8AAAAJ&hl=ko", 
+              "https://www.linkedin.com/in/junseok-bae-23aa7331/",
+              "https://orcid.org/0000-0003-0042-7242"
+            ]
+          },
+          {
+            "@id": "#cheongdam-wooridul",
+            "@type": "MedicalOrganization",
+            "name": "Cheongdam Wooridul Spine Hospital",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Seoul",
+              "addressCountry": "KR"
+            },
+            "telephone": "+82-2-513-8452",
+            "url": "https://www.wooridul.com"
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         color-scheme: dark;

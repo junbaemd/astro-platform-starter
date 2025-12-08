@@ -1,6 +1,4 @@
 ---
-import "../styles/global.css";
-
 const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.props;
 ---
 
@@ -9,59 +7,239 @@ const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.prop
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #020617;
+        color: #e5e7eb;
+      }
+
+      a {
+        color: #22c55e;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* 상단 네비게이션 */
+      .nav-bar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid #1f2937;
+        background: rgba(2, 6, 23, 0.9);
+        backdrop-filter: blur(14px);
+      }
+
+      .nav-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        background: #22c55e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        font-weight: 700;
+        color: #020617;
+      }
+
+      .nav-text-main {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .nav-text-sub {
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        font-size: 13px;
+        color: #e5e7eb;
+      }
+
+      .nav-links a {
+        color: #e5e7eb;
+      }
+
+      .nav-links a:hover {
+        color: #a7f3d0;
+      }
+
+      .nav-badge {
+        border-radius: 999px;
+        border: 1px solid rgba(16, 185, 129, 0.7);
+        padding: 4px 10px;
+        font-size: 11px;
+        color: #6ee7b7;
+      }
+
+      /* 메인 컨테이너 */
+      .page-shell {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 48px 20px 64px;
+      }
+
+      .page-shell::before {
+        content: "";
+        position: fixed;
+        inset-inline: 0;
+        top: -200px;
+        height: 260px;
+        background: radial-gradient(
+          circle at top,
+          rgba(16, 185, 129, 0.25),
+          transparent 60%
+        );
+        opacity: 0.8;
+        z-index: -1;
+      }
+
+      /* 안쪽 main (index.astro의 main)을 카드처럼 보이게 */
+      .page-shell > main {
+        background: radial-gradient(circle at top left, #020617, #020617),
+          rgba(15, 23, 42, 0.9);
+        border-radius: 28px;
+        border: 1px solid rgba(30, 64, 175, 0.35);
+        box-shadow: 0 30px 80px rgba(15, 23, 42, 0.95);
+        padding: 32px 28px 40px;
+      }
+
+      @media (min-width: 900px) {
+        .page-shell > main {
+          padding: 40px 40px 48px;
+        }
+      }
+
+      /* 기본 타이포 */
+      h1 {
+        font-size: 2.3rem;
+        line-height: 1.2;
+        margin: 0 0 0.8rem;
+        font-weight: 600;
+        color: #f9fafb;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        margin: 2.2rem 0 0.7rem;
+        font-weight: 600;
+        color: #f9fafb;
+      }
+
+      h3 {
+        font-size: 1.05rem;
+        margin: 1.4rem 0 0.3rem;
+        font-weight: 600;
+        color: #e5e7eb;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0 0 0.75rem;
+        color: #e5e7eb;
+      }
+
+      /* 섹션 간 간격 */
+      main section + section {
+        margin-top: 1.8rem;
+      }
+
+      /* footer */
+      footer {
+        border-top: 1px solid #1f2937;
+        background: #020617;
+      }
+
+      .footer-inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 14px 20px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-size: 11px;
+        color: #9ca3af;
+      }
+
+      @media (min-width: 800px) {
+        .footer-inner {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+    </style>
   </head>
 
-  <body class="min-h-screen bg-slate-950 text-slate-50">
-    <!-- Top navigation -->
-    <header class="border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
-      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <!-- Logo -->
-        <a href="/" class="flex items-center gap-2">
-          <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/90">
-            <span class="text-xs font-bold text-slate-950">JS</span>
-          </div>
-          <div class="leading-tight">
-            <div class="text-sm font-semibold tracking-wide">junspine.com</div>
-            <div class="text-[11px] text-slate-400">
-              Endoscopic & ASD spine surgery
-            </div>
+  <body>
+    <!-- Navigation -->
+    <header class="nav-bar">
+      <div class="nav-inner">
+        <a href="/" class="nav-left">
+          <div class="nav-logo">JS</div>
+          <div>
+            <div class="nav-text-main">junspine.com</div>
+            <div class="nav-text-sub">Endoscopic & ASD spine surgery</div>
           </div>
         </a>
 
-        <!-- Nav links -->
-        <nav class="hidden gap-6 text-sm font-medium text-slate-300 md:flex">
-          <a href="/" class="hover:text-emerald-300 transition">Home</a>
-          <a href="/research" class="hover:text-emerald-300 transition">Research</a>
-          <a href="/lectures" class="hover:text-emerald-300 transition">Lectures</a>
-          <a href="/profile" class="hover:text-emerald-300 transition">Profile</a>
-          <a href="/contact" class="hover:text-emerald-300 transition">Contact</a>
+        <nav class="nav-links">
+          <a href="/">Home</a>
+          <a href="/research">Research</a>
+          <a href="/lectures">Lectures</a>
+          <a href="/profile">Profile</a>
+          <a href="/contact">Contact</a>
         </nav>
 
-        <!-- Right badge -->
-        <div class="hidden rounded-full border border-emerald-500/60 px-3 py-1 text-[11px] font-medium text-emerald-300 md:inline-flex">
-          Academic portfolio
-        </div>
+        <div class="nav-badge">Academic portfolio</div>
       </div>
     </header>
 
-    <!-- Page content -->
-    <div class="relative">
-      <!-- background glow -->
-      <div class="pointer-events-none absolute inset-x-0 -top-24 -z-10 h-72 bg-gradient-to-b from-emerald-500/10 via-slate-900 to-slate-950 blur-3xl" />
-      <main>
-        <slot />
-      </main>
+    <!-- Page -->
+    <div class="page-shell">
+      <slot />
     </div>
 
     <!-- Footer -->
-    <footer class="mt-16 border-t border-slate-800/80 bg-slate-950/95">
-      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
-        <p>
-          © {new Date().getFullYear()} Jun-seok Bae, MD, PhD · Academic & educational site only.
-        </p>
-        <p>
-          Clinical care is exclusively provided at Cheongdam Wooridul Spine Hospital, Seoul, Korea.
-        </p>
+    <footer>
+      <div class="footer-inner">
+        <p>© {new Date().getFullYear()} Junseok Bae, MD · Academic & educational site only.</p>
+        <p>Clinical care is exclusively provided at Cheongdam Wooridul Spine Hospital, Seoul, Korea.</p>
       </div>
     </footer>
   </body>

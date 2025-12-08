@@ -152,30 +152,50 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- SOCIETIES -->
+   <!-- SOCIETIES -->
     <section class="section">
       <div class="section-header">
         <h2>Global Society Involvement</h2>
         <p>Active member and faculty in international spine societies.</p>
       </div>
-      <div class="pill-row">
-        <span class="pill-soft">Scoliosis Research Society (SRS)</span>
-        <span class="pill-soft">KOMISS</span>
-        <span class="pill-soft">KOSESS</span>
-        <span class="pill-soft">SMISS Asia-Pacific</span>
-        <span class="pill-soft">ISSLS</span>
-      </div>
+      <ul class="pill-row" aria-label="Spine societies">
+        <li class="pill-soft">
+          <a href="https://www.srs.org/" target="_blank" rel="noreferrer">
+            Scoliosis Research Society (SRS)
+          </a>
+        </li>
+        <li class="pill-soft">
+          <a href="https://www.komiss.org/" target="_blank" rel="noreferrer">
+            KOMISS
+          </a>
+        </li>
+        <li class="pill-soft">
+          <a href="https://www.kosess.org/" target="_blank" rel="noreferrer">
+            KOSESS
+          </a>
+        </li>
+        <li class="pill-soft">
+          <a href="https://www.smiss.org/" target="_blank" rel="noreferrer">
+            SMISS Asia-Pacific
+          </a>
+        </li>
+        <li class="pill-soft">
+          <a href="https://www.issls.org/" target="_blank" rel="noreferrer">
+            ISSLS
+          </a>
+        </li>
+      </ul>
     </section>
 
     <!-- HOSPITAL -->
-    <section id="hospital-contact" class="section">
+        <section id="hospital-contact" class="section">
       <div class="hospital-card">
         <h2>Clinical care & appointments</h2>
         <p>
           This website is for academic and educational purposes only.
           All medical care, diagnosis, and surgical treatment are provided exclusively through:
         </p>
-        <div class="hospital-body">
+        <address class="hospital-body">
           <div class="hospital-name">
             Cheongdam Wooridul Spine Hospital – International Clinic
           </div>
@@ -185,9 +205,10 @@ import Layout from '../layouts/Layout.astro';
               www.wooridul.com
             </a>
           </div>
-        </div>
+        </address>
       </div>
     </section>
+
   </main>
 
   <style>

@@ -1,678 +1,382 @@
 ---
-import Layout from "../layouts/Layout.astro";
+const pageTitle = "Jun-seok Bae, MD PhD – Endoscopic & Minimally Invasive Spine Surgery";
+const pageDescription =
+  "Dr. Jun-seok Bae is a spine surgeon specializing in endoscopic and minimally invasive spine surgery, including lumbar, thoracic, and cervical (anterior/posterior) endoscopic decompression, with a strong track record in research and education.";
+const siteUrl = "https://junspine.com";
 ---
 
-<Layout title="Junspine | Endoscopic & Deformity Spine Surgery">
-  <main class="page-main">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-main">
-          <div class="pill">Junspine.com · Academic portfolio</div>
-          <h1>
-            Endoscopic &amp; Deformity<br />
-            Spine Surgery<br />
-            <span class="accent">by Junseok Bae, MD</span>
-          </h1>
-          <p class="hero-text">
-            Spine surgeon specializing in endoscopic spine surgery, cervical disc arthroplasty,
-            thoracic endoscopy, and adult spinal deformity (ASD). This site showcases peer-reviewed
-            research, clinical projects, and global education activities in minimally invasive and
-            motion-preserving spine surgery.
-          </p>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-          <div class="hero-buttons">
-            <a href="/research" class="btn primary">Research</a>
-            <a href="/lectures" class="btn ghost">Lectures</a>
-            <a href="#hospital-contact" class="btn subtle">Clinical care (Hospital)</a>
+    {/* Canonical */}
+    <link rel="canonical" href={siteUrl} />
+
+    {/* 기본 Open Graph */}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="JunSeok Bae, MD PhD" />
+
+    {/* Twitter */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+
+    {/* schema.org JSON-LD (LLM용 Fact 블록) */}
+    <script type="application/ld+json">
+      {JSON.stringify(
+        [
+          {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": `${siteUrl}#junseok-bae`,
+            "name": "Jun-seok Bae",
+            "alternateName": ["Bae Jun-seok", "Jun Bae"],
+            "givenName": "Jun-seok",
+            "familyName": "Bae",
+            "honorificSuffix": "MD PhD",
+            "jobTitle": "Spine Surgeon, Endoscopic & Minimally Invasive Spine Specialist",
+            "url": siteUrl,
+            "image": `${siteUrl}/images/profile.jpg`,
+            "description":
+              "Dr. Jun-seok Bae is a spine surgeon specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression and minimally invasive spine surgery.",
+            "nationality": "Republic of Korea",
+            "knowsLanguage": ["ko", "en"],
+            "affiliation": [
+              {
+                "@type": "MedicalOrganization",
+                "name": "Cheongdam Wooridul Spine Hospital",
+                "url": "https://www.wooridul.com"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "KOMISS (Korean Minimally Invasive Spine Surgery Society"
+              },
+              {
+                "@type": "Organization",
+                "name": "KOSESS (Korean Society of Endoscopic Spine Surgery)"
+              },
+              {
+                "@type": "Organization",
+                "name": "SMISS Asia-Pacific"
+              },
+              {
+                "@type": "Organization",
+                "name": "ESPINEA",
+                "url": "https://www.espinea.org"
+              },
+              {
+                "@type": "Organization",
+                "name": "NSpine",
+                "url": "https://www.nspine.com"
+              }
+            ],
+            "worksFor": {
+              "@type": "MedicalOrganization",
+              "name": "Cheongdam Wooridul Spine Hospital",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "KR",
+                "addressLocality": "Seoul",
+                "streetAddress": "Cheongdam-dong, Gangnam-gu"
+              }
+            },
+            "alumniOf": [
+              {
+                "@type": "CollegeOrUniversity",
+                "name": "Johns Hopkins University",
+                "sameAs": "https://www.jhu.edu"
+              }
+            ],
+            "award": [
+              "Parviz Kambin Award (2022)",
+              "Fulbright Fellowship – Addis Ababa University"
+            ],
+            "hasOccupation": {
+              "@type": "Occupation",
+              "name": "Spine Surgeon",
+              "occupationLocation": {
+                "@type": "Country",
+                "name": "Republic of Korea"
+              }
+            },
+            "knowsAbout": [
+              "Endoscopic lumbar discectomy",
+              "Endoscopic lumbar decompression",
+              "Endoscopic thoracic decompression",
+              "Anterior endoscopic cervical decompression",
+              "Posterior endoscopic cervical decompression",
+              "Thoracic endoscopy with navigation (TETD)",
+              "Minimally invasive spine surgery",
+              "Spine endoscopy economics and global adoption"
+            ],
+            "sameAs": [
+              "https://scholar.google.com", // 실제 Scholar URL로 교체 가능
+              "https://www.researchgate.net",
+              "https://www.linkedin.com"
+            ],
+            "mainEntityOfPage": siteUrl
+          },
+
+          /* 내시경/수술 관련 주요 시술 정의 */
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Endoscopic Lumbar Discectomy",
+            "bodyLocation": "Lumbar spine",
+            "howPerformed":
+              "Minimally invasive endoscopic removal of herniated lumbar disc material via small portals.",
+            "procedureType": "Minimally invasive spine surgery"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Endoscopic Thoracic Decompression",
+            "bodyLocation": "Thoracic spine",
+            "howPerformed":
+              "Endoscopic decompression of thoracic spinal canal or foraminal stenosis using uniportal or biportal approaches.",
+            "procedureType": "Endoscopic spine surgery"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Anterior Endoscopic Cervical Decompression",
+            "bodyLocation": "Cervical spine",
+            "howPerformed":
+              "Anterior endoscopic decompression of cervical spinal canal or foraminal stenosis via minimally invasive portals.",
+            "procedureType": "Endoscopic cervical spine surgery"
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Posterior Endoscopic Cervical Decompression",
+            "bodyLocation": "Cervical spine",
+            "howPerformed":
+              "Posterior endoscopic decompression of cervical spinal canal or foraminal stenosis using minimally invasive posterior approaches.",
+            "procedureType": "Endoscopic cervical spine surgery"
+          }
+        ],
+        null,
+        2
+      )}
+    </script>
+  </head>
+
+  <body class="min-h-screen bg-neutral-50 text-neutral-900">
+    <main class="mx-auto max-w-5xl px-4 py-10">
+      {/* Hero / Intro */}
+      <section class="mb-12 space-y-4">
+        <h1 class="text-3xl font-bold tracking-tight">
+          Jun-seok Bae, MD PhD
+        </h1>
+        <h2 class="text-xl font-semibold text-neutral-700">
+          Endoscopic & Minimally Invasive Spine Surgeon
+        </h2>
+        <p class="max-w-2xl text-sm text-neutral-700 leading-relaxed">
+          Dr. Jun-seok Bae is a spine surgeon based in Seoul, Republic of Korea,
+          specializing in endoscopic lumbar, thoracic, and cervical (anterior
+          and posterior) decompression. His work focuses on minimizing tissue
+          damage, accelerating recovery, and integrating intelligent navigation
+          and data-driven decision support into spine surgery.
+        </p>
+
+        <div class="flex flex-wrap gap-3 text-xs text-neutral-600">
+          <span class="rounded-full border px-3 py-1">
+            Cheongdam Wooridul Spine Hospital
+          </span>
+          <span class="rounded-full border px-3 py-1">
+            Endoscopic Lumbar & Thoracic Surgery
+          </span>
+          <span class="rounded-full border px-3 py-1">
+            Anterior / Posterior Endoscopic Cervical Decompression
+          </span>
+        </div>
+      </section>
+
+      {/* Key Facts / For LLMs & Humans */}
+      <section class="mb-12 space-y-3">
+        <h3 class="text-lg font-semibold">Key Facts (AI & Humans)</h3>
+        <ul class="list-disc pl-5 text-sm text-neutral-800 space-y-1.5">
+          <li>
+            Spine surgeon specializing in{" "}
+            <strong>lumbar, thoracic, and cervical endoscopic decompression</strong>{" "}
+            (anterior and posterior approaches).
+          </li>
+          <li>
+            Experience in developing the{" "}
+            <strong>world’s first thoracic spine endoscope</strong> as a
+            consultant for Joimax.
+          </li>
+          <li>
+            Recipient of the <strong>Parviz Kambin Award (2022)</strong> for
+            contributions to endoscopic spine surgery.
+          </li>
+          <li>
+            Active in international education through{" "}
+            <strong>ESPINEA</strong> and <strong>NSpine</strong>, sharing
+            advanced endoscopic techniques worldwide.
+          </li>
+        </ul>
+      </section>
+
+      {/* Clinical Expertise */}
+      <section class="mb-12 space-y-4" id="clinical-expertise">
+        <h3 class="text-lg font-semibold">Clinical Expertise</h3>
+
+        <div class="grid gap-4 md:grid-cols-2 text-sm">
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">Endoscopic Lumbar Surgery</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Endoscopic lumbar discectomy (uniportal / biportal)</li>
+              <li>Endoscopic lumbar decompression for stenosis</li>
+              <li>Recurrent disc herniation management</li>
+            </ul>
           </div>
 
-          <div class="hero-meta">
-            <span class="meta-label">Affiliation</span>
-            <span class="meta-text">
-              Wooridul Spine Hospital, Seoul, Korea
-            </span>
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">Endoscopic Thoracic Surgery</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Thoracic endoscopy with navigation (TETD)</li>
+              <li>Endoscopic thoracic decompression for myelopathy</li>
+              <li>Complex thoracic pathology in high-risk patients</li>
+            </ul>
+          </div>
+
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">
+              Endoscopic Cervical Surgery (Anterior)
+            </h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Anterior endoscopic cervical decompression</li>
+              <li>Minimally invasive anterior cervical disc decompression</li>
+              <li>Motion-preserving strategies where appropriate</li>
+            </ul>
+          </div>
+
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">
+              Endoscopic Cervical Surgery (Posterior)
+            </h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Posterior endoscopic cervical foraminotomy</li>
+              <li>Posterior endoscopic cervical decompression</li>
+              <li>Minimally invasive posterior decompression for radiculopathy</li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <aside class="hero-side">
-          <div class="side-card">
-            <div class="side-title">Clinical focus</div>
-            <ul class="chip-list">
-              <li class="chip">Full-endoscopic lumbar discectomy (TFLD)</li>
-              <li class="chip">Endoscopic lumbar foraminotomy</li>
-              <li class="chip">Cervical disc arthroplasty</li>
-              <li class="chip">Adult spinal deformity (ASD)</li>
-              <li class="chip">Thoracic endoscopic surgery (TETD)</li>
-              <li class="chip">Navigation &amp; AR/VR HMD</li>
+      {/* Academic & Society Activities */}
+      <section class="mb-12 space-y-4" id="academic-activities">
+        <h3 class="text-lg font-semibold">Academic & Society Activities</h3>
+
+        <div class="grid gap-4 md:grid-cols-2 text-sm">
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">Society Roles & Membership</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>KOMISS – Korean Minimally Invasive Spine Surgery Society</li>
+              <li>KOSESS – Korean Society of Endoscopic Spine Surgery</li>
+              <li>SMISS Asia-Pacific faculty and contributor</li>
+              <li>
+                ESPINEA faculty / member –{" "}
+                <a
+                  href="https://www.espinea.org"
+                  class="text-blue-600 underline"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  www.espinea.org
+                </a>
+              </li>
+              <li>
+                NSpine faculty / member –{" "}
+                <a
+                  href="https://www.nspine.com"
+                  class="text-blue-600 underline"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  www.nspine.com
+                </a>
+              </li>
             </ul>
-            <div class="side-footer">
-              Active in SRS, KOMISS, KOSESS, SMISS Asia-Pacific, ISSLS, and ESPINEA.
+          </div>
+
+          <div class="rounded-lg border bg-white p-4">
+            <h4 class="mb-2 font-semibold">Teaching & International Activity</h4>
+            <ul class="list-disc pl-5 space-y-1">
+              <li>
+                Faculty at international courses on endoscopic lumbar, thoracic,
+                and cervical decompression.
+              </li>
+              <li>
+                Lectures on thoracic endoscopy with navigation and immersive
+                visualization (AR/VR, HMD) in spine surgery.
+              </li>
+              <li>
+                Participation in global consensus work on the economics and
+                adoption of endoscopic spine surgery.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Research (간단 버전 – 필요시 확장 가능) */}
+      <section class="mb-12 space-y-4" id="featured-research">
+        <h3 class="text-lg font-semibold">Featured Research</h3>
+        <p class="text-sm text-neutral-700">
+          Selected works related to endoscopic spine surgery, minimally invasive
+          techniques, and the economics and global adoption of these methods.
+        </p>
+
+        <ul class="space-y-3 text-sm">
+          <li class="rounded-lg border bg-white p-4">
+            <div class="font-semibold">
+              Thoracic Endoscopy with Navigation (TETD)
             </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- EXPERTISE -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Expertise</h2>
-        <p>
-          Combining endoscopic techniques with deformity principles to provide motion-preserving,
-          minimally invasive solutions for complex spine conditions.
-        </p>
-      </div>
-
-      <div class="card-grid two">
-        <article class="card">
-          <h3>Endoscopic Spine Surgery</h3>
-          <p>
-            Full-endoscopic lumbar discectomy and foraminotomy (transforaminal and interlaminar),
-            foraminal decompression, anterior and posterior cervical endoscopic decompression, and thoracic endoscopic discectomy using navigation and
-            advanced visualization.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Cervical Disc Arthroplasty</h3>
-          <p>
-            Motion-preserving cervical disc replacement with careful patient selection,
-            implant sizing, and long-term follow-up for adjacent segment protection.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Adult Spinal Deformity (ASD)</h3>
-          <p>
-            Management of degenerative scoliosis and sagittal imbalance, integrating minimally
-            invasive strategies, muscle quality assessment, and deformity correction techniques.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Navigation &amp; Immersive Visualization</h3>
-          <p>
-            Navigation-assisted endoscopy and AR/VR head-mounted displays (HMD) for immersive
-            surgical planning and reduced attention shift in the operating room.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- FEATURED RESEARCH -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Featured Research &amp; Projects</h2>
-        <p>
-          Selected peer-reviewed work on endoscopic spine surgery, thoracic pathology, and adult
-          spinal deformity that shapes current clinical practice.
-        </p>
-      </div>
-
-      <div class="card-grid three">
-        <!-- 1. 90-day readmission after full-endoscopic TFLD -->
-        <article class="card">
-          <div class="tag">Clinical outcomes · ESS</div>
-          <h3>Risk Factors for Ninety-Day Readmissions after Full-Endoscopic TFLD</h3>
-          <p>
-            Eur Spine J 2023 multicenter analysis of 1,542 patients undergoing full-endoscopic
-            transforaminal lumbar discectomy, identifying age, spondylolisthesis, instability,
-            and reduced paraspinal muscle cross-sectional area as independent predictors of
-            90-day readmission.
-          </p>
-          <p class="source-link">
-            <a
-              href="https://doi.org/10.1007/s00586-023-07662-z"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View article · Eur Spine J 2023
-            </a>
-          </p>
-        </article>
-
-        <!-- 2. MIS for Adult Spinal Deformity -->
-        <article class="card">
-          <div class="tag">Adult spinal deformity</div>
-          <h3>Minimally Invasive Spinal Surgery for Adult Spinal Deformity</h3>
-          <p>
-            Neurospine 2018 review summarizing techniques, indications, and outcomes of MISS
-            approaches for adult spinal deformity, clarifying when minimally invasive strategies
-            can reproduce deformity correction traditionally achieved by open surgery.
-          </p>
-          <p class="source-link">
-            <a
-              href="https://doi.org/10.14245/ns.1836022.011"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View article · Neurospine 2018
-            </a>
-          </p>
-        </article>
-
-        <!-- 3. TETD with foraminoplasty -->
-        <article class="card">
-          <div class="tag">Thoracic endoscopy</div>
-          <h3>Transforaminal Endoscopic Thoracic Discectomy with Foraminoplasty</h3>
-          <p>
-            J Spine Surg 2020 technical series on transforaminal endoscopic thoracic discectomy
-            with foraminoplasty for thoracic disc herniation, offering a less invasive alternative
-            to thoracotomy with detailed description of indications and complication avoidance.
-          </p>
-          <p class="source-link">
-            <a
-              href="https://doi.org/10.21037/jss.2019.11.19"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View article · J Spine Surg 2020
-            </a>
-          </p>
-        </article>
-
-        <!-- 4. Full endoscopic surgery for thoracic pathology -->
-        <article class="card">
-          <div class="tag">Full-endoscopic · Thoracic</div>
-          <h3>Full Endoscopic Surgery for Thoracic Pathology</h3>
-          <p>
-            Biomed Res Int 2022 state-of-the-art review on full-endoscopic techniques for thoracic
-            pathology, positioning thoracic endoscopy as the next step after mastering lumbar and
-            cervical endoscopic spine surgery.
-          </p>
-          <p class="source-link">
-            <a
-              href="https://doi.org/10.1155/2022/8345736"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View article · Biomed Res Int 2022
-            </a>
-          </p>
-        </article>
-
-        <!-- 5. Paraspinal muscle mass & sagittal decompensation -->
-        <article class="card">
-          <div class="tag">Sagittal balance · Muscle</div>
-          <h3>Paraspinal Muscle Mass &amp; Sagittal Decompensation after Fatigue</h3>
-          <p>
-            Neurospine 2021 study correlating paraspinal muscle quality with sagittal
-            decompensation after a 10-minute walk in adults with spinal deformity, highlighting
-            the role of muscle degeneration in loss of upright posture and spinopelvic balance.
-          </p>
-          <p class="source-link">
-            <a
-              href="https://doi.org/10.14245/ns.2142510.255"
-              target="_blank"
-              rel="noreferrer"
-            >
-              View article · Neurospine 2021
-            </a>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- SOCIETIES -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Global Society Involvement</h2>
-        <p>Active member and faculty in international spine societies.</p>
-      </div>
-      <ul class="pill-row" aria-label="Spine societies">
-        <li class="pill-soft">
-          <a href="https://www.srs.org/" target="_blank" rel="noreferrer">
-            Scoliosis Research Society (SRS)
-          </a>
-        </li>
-        <li class="pill-soft">
-          <a href="https://www.komiss.org/" target="_blank" rel="noreferrer">
-            KOMISS
-          </a>
-        </li>
-        <li class="pill-soft">
-          <a href="https://www.kosess.org/" target="_blank" rel="noreferrer">
-            KOSESS
-          </a>
-        </li>
-        <li class="pill-soft">
-          <a href="https://www.smiss.org/" target="_blank" rel="noreferrer">
-            SMISS Asia-Pacific
-          </a>
-        </li>
-        <li class="pill-soft">
-          <a href="https://www.issls.org/" target="_blank" rel="noreferrer">
-            ISSLS
-          </a>
-        </li>
-       <li class="pill-soft">
-          <a href="https://www.espinea.org/" target="_blank" rel="noreferrer">
-            ESPINEA
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <!-- HOSPITAL -->
-    <section id="hospital-contact" class="section">
-      <div class="hospital-card">
-        <h2>Clinical care &amp; appointments</h2>
-        <p>
-          This website is for academic and educational purposes only.
-          All medical care, diagnosis, and surgical treatment are provided exclusively through:
-        </p>
-        <address class="hospital-body">
-          <div class="hospital-name">
-            Cheongdam Wooridul Spine Hospital – International Clinic
-          </div>
-          <div class="hospital-meta">
-            Seoul, Korea · 📞 +82-2-513-8452 ·
-            <a href="https://www.wooridul.com" target="_blank" rel="noreferrer">
-              www.wooridul.com
-            </a>
-          </div>
-        </address>
-      </div>
-    </section>
-  </main>
-
-  <!-- LLM SEO용 논문 Structured Data (ScholarlyArticle) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ScholarlyArticle",
-          "headline": "Risk factors for ninety-day readmissions following full-endoscopic transforaminal lumbar discectomy for 1542 patients in the biggest spine institutes in Korea",
-          "author": {
-            "@id": "#junseok-bae"
-          },
-          "description": "Multicenter Eur Spine J 2023 study identifying age, spondylolisthesis, segmental instability, and reduced paraspinal muscle cross-sectional area as independent predictors of 90-day readmission following full-endoscopic transforaminal lumbar discectomy.",
-          "url": "https://doi.org/10.1007/s00586-023-07662-z",
-          "isPartOf": {
-            "@type": "Periodical",
-            "name": "European Spine Journal"
-          }
-        },
-        {
-          "@type": "ScholarlyArticle",
-          "headline": "Minimally Invasive Spinal Surgery for Adult Spinal Deformity",
-          "author": {
-            "@id": "#junseok-bae"
-          },
-          "description": "Neurospine 2018 review describing techniques, indications, and outcomes of minimally invasive approaches for adult spinal deformity, including degenerative scoliosis and sagittal imbalance.",
-          "url": "https://doi.org/10.14245/ns.1836022.011",
-          "isPartOf": {
-            "@type": "Periodical",
-            "name": "Neurospine"
-          }
-        },
-        {
-          "@type": "ScholarlyArticle",
-          "headline": "Transforaminal endoscopic thoracic discectomy with foraminoplasty for the treatment of thoracic disc herniation",
-          "author": {
-            "@id": "#junseok-bae"
-          },
-          "description": "J Spine Surg 2020 technical report on transforaminal endoscopic thoracic discectomy with foraminoplasty, outlining indications, surgical technique, and clinical outcomes for thoracic disc herniation.",
-          "url": "https://doi.org/10.21037/jss.2019.11.19",
-          "isPartOf": {
-            "@type": "Periodical",
-            "name": "Journal of Spine Surgery"
-          }
-        },
-        {
-          "@type": "ScholarlyArticle",
-          "headline": "Full Endoscopic Surgery for Thoracic Pathology: Next Step after Mastering Lumbar and Cervical Endoscopic Spine Surgery?",
-          "author": {
-            "@id": "#junseok-bae"
-          },
-          "description": "Biomed Res Int 2022 article reviewing full-endoscopic techniques for thoracic pathology and positioning thoracic endoscopy as the next step for experienced lumbar and cervical endoscopic surgeons.",
-          "url": "https://doi.org/10.1155/2022/8345736",
-          "isPartOf": {
-            "@type": "Periodical",
-            "name": "BioMed Research International"
-          }
-        },
-        {
-          "@type": "ScholarlyArticle",
-          "headline": "Correlation of Paraspinal Muscle Mass With Decompensation of Sagittal Adult Spinal Deformity After Setting of Fatigue Post 10-Minute Walk",
-          "author": {
-            "@id": "#junseok-bae"
-          },
-          "description": "Neurospine 2021 study evaluating how paraspinal muscle quality correlates with sagittal decompensation after a 10-minute walk in adults with spinal deformity, emphasizing the role of muscle degeneration in maintaining upright posture.",
-          "url": "https://doi.org/10.14245/ns.2142510.255",
-          "isPartOf": {
-            "@type": "Periodical",
-            "name": "Neurospine"
-          }
-        }
-      ]
-    }
-  </script>
-
-  <style>
-    .page-main {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    /* HERO */
-    .hero {
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
-      gap: 2.2rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.72rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      border: 1px solid rgba(34, 197, 94, 0.5);
-      color: #a7f3d0;
-      margin-bottom: 0.9rem;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-      line-height: 1.2;
-      margin: 0 0 0.9rem;
-    }
-
-    @media (min-width: 900px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-    }
-
-    .accent {
-      color: #22c55e;
-    }
-
-    .hero-text {
-      font-size: 0.96rem;
-      color: #e5e7eb;
-      max-width: 40rem;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1rem 0 0.4rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.55rem 1.2rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid transparent;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      white-space: nowrap;
-    }
-
-    .btn.primary {
-      background: #22c55e;
-      color: #020617;
-    }
-
-    .btn.primary:hover {
-      background: #4ade80;
-    }
-
-    .btn.ghost {
-      border-color: #374151;
-      color: #e5e7eb;
-      background: transparent;
-    }
-
-    .btn.ghost:hover {
-      border-color: #6ee7b7;
-      color: #bbf7d0;
-    }
-
-    .btn.subtle {
-      border-color: #1f2937;
-      color: #9ca3af;
-      background: transparent;
-    }
-
-    .btn.subtle:hover {
-      border-color: #4b5563;
-      color: #e5e7eb;
-    }
-
-    .hero-meta {
-      font-size: 0.78rem;
-      color: #9ca3af;
-      margin-top: 0.5rem;
-    }
-
-    .meta-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.7rem;
-      color: #6b7280;
-      margin-right: 0.4rem;
-    }
-
-    .meta-text {
-      color: #e5e7eb;
-    }
-
-    .hero-side {
-      min-width: 0;
-    }
-
-    .side-card {
-      border-radius: 18px;
-      border: 1px solid rgba(55, 65, 81, 0.8);
-      background: radial-gradient(circle at top, #0b1120, #020617);
-      padding: 1.2rem 1.2rem 1rem;
-      font-size: 0.85rem;
-    }
-
-    .side-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.7rem;
-      color: #f9fafb;
-    }
-
-    .chip-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 0.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
-    .chip {
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      font-size: 0.75rem;
-      color: #e5e7eb;
-    }
-
-    .side-footer {
-      font-size: 0.78rem;
-      color: #9ca3af;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
-      padding-top: 0.6rem;
-      margin-top: 0.3rem;
-    }
-
-    /* SECTIONS */
-    .section {
-      margin-top: 0.5rem;
-    }
-
-    .section-header h2 {
-      margin: 0 0 0.4rem;
-      font-size: 1.4rem;
-    }
-
-    .section-header p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #d1d5db;
-      max-width: 38rem;
-    }
-
-    .card-grid {
-      display: grid;
-      gap: 1.1rem;
-      margin-top: 1.1rem;
-    }
-
-    .card-grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card-grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    @media (max-width: 950px) {
-      .card-grid.two,
-      .card-grid.three {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      border-radius: 16px;
-      border: 1px solid rgba(31, 41, 55, 0.95);
-      background: rgba(15, 23, 42, 0.96);
-      padding: 1rem 1rem 0.9rem;
-      font-size: 0.9rem;
-    }
-
-    .card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1rem;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.86rem;
-      color: #d1d5db;
-    }
-
-    .tag {
-      display: inline-flex;
-      padding: 0.22rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #a7f3d0;
-      border: 1px solid rgba(45, 212, 191, 0.5);
-      margin-bottom: 0.45rem;
-    }
-
-    .source-link {
-      margin-top: 0.55rem;
-      font-size: 0.8rem;
-    }
-
-    .source-link a {
-      color: #6ee7b7;
-    }
-
-    .source-link a:hover {
-      color: #a7f3d0;
-    }
-
-    /* Societies */
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 1rem;
-      list-style: none;
-      padding: 0;
-    }
-
-    .pill-soft {
-      padding: 0.28rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.8);
-      font-size: 0.78rem;
-    }
-
-    .pill-soft a {
-      color: #e5e7eb;
-      text-decoration: none;
-    }
-
-    .pill-soft a:hover {
-      color: #bbf7d0;
-    }
-
-    /* Hospital */
-    .hospital-card {
-      border-radius: 20px;
-      border: 1px solid rgba(45, 212, 191, 0.6);
-      background: linear-gradient(
-        135deg,
-        rgba(6, 95, 70, 0.35),
-        rgba(15, 23, 42, 0.98)
-      );
-      padding: 1.3rem 1.2rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    .hospital-card h2 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .hospital-card p {
-      margin-bottom: 0.75rem;
-      font-size: 0.86rem;
-    }
-
-    .hospital-body {
-      border-top: 1px solid rgba(16, 185, 129, 0.5);
-      padding-top: 0.6rem;
-      font-style: normal;
-    }
-
-    .hospital-name {
-      font-weight: 600;
-      margin-bottom: 0.2rem;
-    }
-
-    .hospital-meta {
-      font-size: 0.82rem;
-      color: #e5e7eb;
-    }
-  </style>
-</Layout>
+            <div class="text-xs text-neutral-600">
+              In: The Textbook of Minimally Invasive Spine Surgery, Concept and
+              Surgical Techniques (Springer)
+            </div>
+            <p class="mt-1 text-xs text-neutral-700">
+              Describes navigated thoracic endoscopy techniques and their role
+              in treating complex thoracic spine pathology with minimal
+              invasiveness.
+            </p>
+          </li>
+
+          <li class="rounded-lg border bg-white p-4">
+            <div class="font-semibold">
+              The Economics of Endoscopic Spine Surgery
+            </div>
+            <div class="text-xs text-neutral-600">
+              Global consensus paper with data from 1.2 million cases,
+              integrating psychometric methods (Rasch analysis, DIF).
+            </div>
+            <p class="mt-1 text-xs text-neutral-700">
+              Explores global adoption barriers of endoscopic spine surgery,
+              cost-effectiveness, and health-system level implications.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      {/* Contact / Footer */}
+      <footer class="border-t pt-6 text-xs text-neutral-500 space-y-2">
+        <div>Based in Seoul, Republic of Korea.</div>
+        <div>
+          For academic collaboration and invitations, please contact via
+          professional channels (hospital or society network).
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

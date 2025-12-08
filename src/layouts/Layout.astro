@@ -1,34 +1,66 @@
 ---
-import '../../src/styles/globals.css';
-import '@fontsource-variable/inter/wght.css';
-import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
-interface Props {
-    title: string;
-}
-
-const { title } = Astro.props;
+const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
-    </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-slate-50">
+    {/* Top navigation */}
+    <header class="border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <a href="/" class="flex items-center gap-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/90">
+            <span class="text-xs font-bold text-slate-950">JS</span>
+          </div>
+          <div class="leading-tight">
+            <div class="text-sm font-semibold tracking-wide">junspine.com</div>
+            <div class="text-[11px] text-slate-400">
+              Endoscopic & ASD spine surgery
             </div>
+          </div>
+        </a>
+
+        {/* Nav links */}
+        <nav class="hidden gap-6 text-sm font-medium text-slate-300 md:flex">
+          <a href="/" class="hover:text-emerald-300 transition">Home</a>
+          <a href="/research" class="hover:text-emerald-300 transition">Research</a>
+          <a href="/lectures" class="hover:text-emerald-300 transition">Lectures</a>
+          <a href="/profile" class="hover:text-emerald-300 transition">Profile</a>
+          <a href="/contact" class="hover:text-emerald-300 transition">Contact</a>
+        </nav>
+
+        {/* Right badge */}
+        <div class="hidden rounded-full border border-emerald-500/60 px-3 py-1 text-[11px] font-medium text-emerald-300 md:inline-flex">
+          Academic portfolio
         </div>
-    </body>
+      </div>
+    </header>
+
+    {/* Page content */}
+    <div class="relative">
+      {/* 배경 장식 */}
+      <div class="pointer-events-none absolute inset-x-0 -top-24 -z-10 h-72 bg-gradient-to-b from-emerald-500/10 via-slate-900 to-slate-950 blur-3xl" />
+      <main>
+        <slot />
+      </main>
+    </div>
+
+    {/* Footer */}
+    <footer class="mt-16 border-t border-slate-800/80 bg-slate-950/95">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+        <p>
+          © {new Date().getFullYear()} Jun-seok Bae, MD, PhD · Academic & educational site only.
+        </p>
+        <p>
+          Clinical care is exclusively provided at Cheongdam Wooridul Spine Hospital, Seoul, Korea.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

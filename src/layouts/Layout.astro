@@ -12,10 +12,10 @@ const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.prop
   </head>
 
   <body class="min-h-screen bg-slate-950 text-slate-50">
-    {/* Top navigation */}
+    <!-- Top navigation -->
     <header class="border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        {/* Logo */}
+        <!-- Logo -->
         <a href="/" class="flex items-center gap-2">
           <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-emerald-500/90">
             <span class="text-xs font-bold text-slate-950">JS</span>
@@ -28,7 +28,7 @@ const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.prop
           </div>
         </a>
 
-        {/* Nav links */}
+        <!-- Nav links -->
         <nav class="hidden gap-6 text-sm font-medium text-slate-300 md:flex">
           <a href="/" class="hover:text-emerald-300 transition">Home</a>
           <a href="/research" class="hover:text-emerald-300 transition">Research</a>
@@ -37,23 +37,23 @@ const { title = "Junspine | Endoscopic & Deformity Spine Surgery" } = Astro.prop
           <a href="/contact" class="hover:text-emerald-300 transition">Contact</a>
         </nav>
 
-        {/* Right badge */}
+        <!-- Right badge -->
         <div class="hidden rounded-full border border-emerald-500/60 px-3 py-1 text-[11px] font-medium text-emerald-300 md:inline-flex">
           Academic portfolio
         </div>
       </div>
     </header>
 
-    {/* Page content */}
+    <!-- Page content -->
     <div class="relative">
-      {/* 배경 장식 */}
+      <!-- background glow -->
       <div class="pointer-events-none absolute inset-x-0 -top-24 -z-10 h-72 bg-gradient-to-b from-emerald-500/10 via-slate-900 to-slate-950 blur-3xl" />
       <main>
         <slot />
       </main>
     </div>
 
-    {/* Footer */}
+    <!-- Footer -->
     <footer class="mt-16 border-t border-slate-800/80 bg-slate-950/95">
       <div class="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>

@@ -2,203 +2,491 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Junseok Bae, MD, PhD | Endoscopic & Deformity Spine Surgery">
+<Layout title="Junspine | Endoscopic & Deformity Spine Surgery">
+  <main class="page-main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-main">
+          <div class="pill">Junspine.com · Academic portfolio</div>
+          <h1>
+            Endoscopic & Deformity<br />
+            Spine Surgery<br />
+            <span class="accent">by Junseok Bae, MD</span>
+          </h1>
+          <p class="hero-text">
+            Spine surgeon specializing in endoscopic spine surgery, cervical disc arthroplasty,
+            thoracic endoscopy, and adult spinal deformity (ASD). This site showcases research,
+            publications, and global education in minimally invasive and motion-preserving spine surgery.
+          </p>
 
-  <main class="mx-auto max-w-6xl px-6 py-16">
-  <div class="rounded-3xl border border-slate-800/80 bg-slate-900/60 px-8 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.9)] space-y-16">
-    <!-- Hero -->
-    <section class="space-y-6">
-      <p class="text-sm font-medium text-emerald-400 uppercase tracking-[0.2em]">
-        Junspine.com
-      </p>
+          <div class="hero-buttons">
+            <a href="/research" class="btn primary">Research</a>
+            <a href="/lectures" class="btn ghost">Lectures</a>
+            <a href="#hospital-contact" class="btn subtle">Clinical care (Hospital)</a>
+          </div>
 
-      <h1 class="text-4xl md:text-5xl font-semibold text-white leading-tight">
-        Endoscopic & Deformity Spine Surgery <br />
-        by <span class="text-emerald-400">Junseok Bae, MD</span>
-      </h1>
+          <div class="hero-meta">
+            <span class="meta-label">Affiliation</span>
+            <span class="meta-text">Cheongdam Wooridul Spine Hospital, Seoul, Korea</span>
+          </div>
+        </div>
 
-      <p class="text-base md:text-lg text-slate-300 max-w-3xl">
-        Spine surgeon specializing in endoscopic spine surgery, cervical disc arthroplasty,
-        thoracic endoscopy, and adult spinal deformity (ASD). This site showcases research,
-        publications, and global education in minimally invasive and motion-preserving spine surgery.
-      </p>
-
-      <div class="flex flex-wrap gap-3">
-        <a href="/research" class="px-5 py-2.5 rounded-full bg-emerald-500 text-sm font-medium text-black hover:bg-emerald-400 transition">
-          Research
-        </a>
-        <a href="/lectures" class="px-5 py-2.5 rounded-full border border-slate-600 text-sm font-medium text-slate-100 hover:border-emerald-400 hover:text-emerald-300 transition">
-          Lectures
-        </a>
-        <a href="#hospital-contact" class="px-5 py-2.5 rounded-full border border-slate-700 text-sm font-medium text-slate-300 hover:border-slate-400 transition">
-          Clinical care (Hospital)
-        </a>
-      </div>
-
-      <div class="text-sm text-slate-400">
-        Affiliation: <span class="text-slate-200 font-medium">Cheongdam Wooridul Spine Hospital, Seoul, Korea</span>
+        <aside class="hero-side">
+          <div class="side-card">
+            <div class="side-title">Clinical focus</div>
+            <ul class="chip-list">
+              <li class="chip">Endoscopic lumbar discectomy</li>
+              <li class="chip">Cervical disc arthroplasty</li>
+              <li class="chip">Adult spinal deformity (ASD)</li>
+              <li class="chip">Thoracic endoscopic surgery</li>
+              <li class="chip">Navigation & AR/VR HMD</li>
+            </ul>
+            <div class="side-footer">
+              Active faculty in SRS, KOMISS, KOSESS, SMISS AP, ISSLS.
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
+    <!-- EXPERTISE -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Expertise</h2>
+        <p>
+          Combining endoscopic techniques with deformity principles to provide motion-preserving,
+          minimally invasive solutions for complex spine conditions.
+        </p>
+      </div>
 
-    <!-- Expertise -->
-    <section class="space-y-6">
-      <h2 class="text-2xl md:text-3xl font-semibold text-white">Expertise</h2>
-
-      <p class="text-slate-300 max-w-3xl">
-        Combining endoscopic techniques with deformity principles to provide motion-preserving,
-        minimally invasive solutions for complex spine conditions.
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-6">
-
-        <div class="rounded-xl border border-slate-700/70 bg-slate-900/40 p-5 space-y-2">
-          <h3 class="text-lg font-semibold text-emerald-300">Endoscopic Spine Surgery</h3>
-          <p class="text-sm text-slate-300">
-            Endoscopic lumbar discectomy (PELD, UBE), foraminal decompression, and thoracic
-            endoscopic discectomy using navigation and advanced visualization.
+      <div class="card-grid two">
+        <article class="card">
+          <h3>Endoscopic Spine Surgery</h3>
+          <p>
+            Endoscopic lumbar discectomy (PELD, UBE), foraminal decompression, and thoracic endoscopic
+            discectomy using navigation and advanced visualization.
           </p>
-        </div>
+        </article>
 
-        <div class="rounded-xl border border-slate-700/70 bg-slate-900/40 p-5 space-y-2">
-          <h3 class="text-lg font-semibold text-emerald-300">Cervical Disc Arthroplasty</h3>
-          <p class="text-sm text-slate-300">
+        <article class="card">
+          <h3>Cervical Disc Arthroplasty</h3>
+          <p>
             Motion-preserving cervical disc replacement with careful patient selection and
             long-term follow-up for adjacent segment protection.
           </p>
-        </div>
+        </article>
 
-        <div class="rounded-xl border border-slate-700/70 bg-slate-900/40 p-5 space-y-2">
-          <h3 class="text-lg font-semibold text-emerald-300">Adult Spinal Deformity (ASD)</h3>
-          <p class="text-sm text-slate-300">
+        <article class="card">
+          <h3>Adult Spinal Deformity (ASD)</h3>
+          <p>
             Management of degenerative scoliosis and sagittal imbalance, integrating minimally
             invasive techniques with deformity correction strategies.
           </p>
-        </div>
+        </article>
 
-        <div class="rounded-xl border border-slate-700/70 bg-slate-900/40 p-5 space-y-2">
-          <h3 class="text-lg font-semibold text-emerald-300">Navigation & Immersive Visualization</h3>
-          <p class="text-sm text-slate-300">
+        <article class="card">
+          <h3>Navigation & Immersive Visualization</h3>
+          <p>
             Navigation-assisted endoscopy and AR/VR head-mounted displays for immersive surgical
             planning and reduced attention shift in the operating room.
           </p>
-        </div>
-
+        </article>
       </div>
     </section>
 
+    <!-- FEATURED RESEARCH -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Featured Research & Projects</h2>
+        <p>
+          Selected work highlighting economics, outcomes, and technology in endoscopic and deformity spine surgery.
+        </p>
+      </div>
 
-    <!-- Featured Research -->
-    <section class="space-y-6">
-      <h2 class="text-2xl md:text-3xl font-semibold text-white">Featured Research & Projects</h2>
-
-      <p class="text-slate-300 max-w-3xl">
-        Selected work highlighting economics, outcomes, and technology in endoscopic and deformity spine surgery.
-      </p>
-
-      <div class="space-y-4">
-
-        <div class="border border-slate-700/70 rounded-xl bg-slate-900/40 p-4">
-          <h3 class="text-base md:text-lg font-semibold text-slate-100">
-            Global Consensus: Economics of Endoscopic Spine Surgery
-          </h3>
-          <p class="text-sm text-slate-300">
-            International consensus analyzing 1.2M cases to understand cost-effectiveness,
+      <div class="card-grid three">
+        <article class="card">
+          <div class="tag">Global consensus</div>
+          <h3>Economics of Endoscopic Spine Surgery</h3>
+          <p>
+            International consensus analyzing 1.2 million cases to understand cost-effectiveness,
             adoption barriers, and global expansion of ESS.
           </p>
-        </div>
+        </article>
 
-        <div class="border border-slate-700/70 rounded-xl bg-slate-900/40 p-4">
-          <h3 class="text-base md:text-lg font-semibold text-slate-100">
-            Thoracic Endoscopic Discectomy (Springer Textbook)
-          </h3>
-          <p class="text-sm text-slate-300">
-            Detailed chapter on Transforaminal endoscopic thoracic discectomy (TETD),
-            technique, indications, and complication avoidance.
+        <article class="card">
+          <div class="tag">Textbook chapter</div>
+          <h3>Thoracic Endoscopy with Navigation</h3>
+          <p>
+            Detailed Springer chapter on navigation-assisted thoracic endoscopic discectomy (TETD),
+            including indications, technique, and complication avoidance.
           </p>
-        </div>
+        </article>
 
-        <div class="border border-slate-700/70 rounded-xl bg-slate-900/40 p-4">
-          <h3 class="text-base md:text-lg font-semibold text-slate-100">
-            Recurrence Prediction Model (XGBoost · SHAP · SMOTE)
-          </h3>
-          <p class="text-sm text-slate-300">
-            ML model using pre-op variables to estimate recurrence risk and support shared decision-making.
+        <article class="card">
+          <div class="tag">ML model</div>
+          <h3>Recurrence Prediction for Lumbar Endoscopy</h3>
+          <p>
+            Machine-learning model (XGBoost · SHAP · SMOTE) using preoperative variables to estimate
+            recurrence risk and support shared decision-making.
           </p>
-        </div>
+        </article>
 
-        <div class="border border-slate-700/70 rounded-xl bg-slate-900/40 p-4">
-          <h3 class="text-base md:text-lg font-semibold text-slate-100">
-            Degenerative spine disease Risk Ontology
-          </h3>
-          <p class="text-sm text-slate-300">
-            Immersive 3D planning and AI-driven disease ontology integrating visualization and prediction.
+        <article class="card">
+          <div class="tag">Visualization</div>
+          <h3>SpineViewer · Immersive Planning</h3>
+          <p>
+            3D planning environment enabling surgeons to explore deformity correction and endoscopic
+            trajectories in an immersive way.
           </p>
-        </div>
+        </article>
 
+        <article class="card">
+          <div class="tag">Risk ontology</div>
+          <h3>Predigm: Disease Risk Modeling</h3>
+          <p>
+            Ontology-driven platform linking clinical variables, outcomes, and prediction models
+            to build defensible risk estimates for spine patients.
+          </p>
+        </article>
       </div>
     </section>
 
-
-    <!-- Memberships -->
-    <section class="space-y-4">
-      <h2 class="text-2xl md:text-3xl font-semibold text-white">
-        Global Society Involvement
-      </h2>
-
-      <p class="text-slate-300 max-w-3xl">
-        Active member and faculty in international spine societies.
-      </p>
-
-      <ul class="flex flex-wrap gap-3 text-sm text-slate-200">
-        <li class="px-3 py-1 rounded-full border border-slate-700/80 bg-slate-900/60">
-          Scoliosis Research Society (SRS)
-        </li>
-        <li class="px-3 py-1 rounded-full border border-slate-700/80 bg-slate-900/60">
-          KOMISS
-        </li>
-        <li class="px-3 py-1 rounded-full border border-slate-700/80 bg-slate-900/60">
-          KOSESS
-        </li>
-        <li class="px-3 py-1 rounded-full border border-slate-700/80 bg-slate-900/60">
-          SMISS Asia-Pacific
-        </li>
-        <li class="px-3 py-1 rounded-full border border-slate-700/80 bg-slate-900/60">
-          ISSLS
-        </li>
-      </ul>
-    </section>
-
-
-    <!-- Hospital Contact -->
-    <section id="hospital-contact" class="space-y-4 border-t border-slate-800 pt-10">
-      <h2 class="text-xl md:text-2xl font-semibold text-white">
-        Clinical care & appointments
-      </h2>
-
-      <p class="text-sm md:text-base text-slate-300 max-w-3xl">
-        This website is for academic and educational purposes only.
-        All medical care, diagnosis, and surgical treatment are provided exclusively through:
-      </p>
-
-      <div class="rounded-xl border border-emerald-500/60 bg-slate-900/50 p-5 space-y-1">
-        <p class="text-base md:text-lg font-semibold text-emerald-300">
-          Cheongdam Wooridul Spine Hospital – International Clinic
-        </p>
-
-        <p class="text-sm text-slate-200">Seoul, Korea</p>
-
-        <p class="text-sm text-slate-300">
-          📞 +82-2-513-8452<br />
-          🌐 <a href="https://www.wooridul.com" class="underline hover:text-emerald-300">
-            www.wooridul.com
-          </a>
-        </p>
+    <!-- SOCIETIES -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Global Society Involvement</h2>
+        <p>Active member and faculty in international spine societies.</p>
+      </div>
+      <div class="pill-row">
+        <span class="pill-soft">Scoliosis Research Society (SRS)</span>
+        <span class="pill-soft">KOMISS</span>
+        <span class="pill-soft">KOSESS</span>
+        <span class="pill-soft">SMISS Asia-Pacific</span>
+        <span class="pill-soft">ISSLS</span>
       </div>
     </section>
 
-  </div>
-
+    <!-- HOSPITAL -->
+    <section id="hospital-contact" class="section">
+      <div class="hospital-card">
+        <h2>Clinical care & appointments</h2>
+        <p>
+          This website is for academic and educational purposes only.
+          All medical care, diagnosis, and surgical treatment are provided exclusively through:
+        </p>
+        <div class="hospital-body">
+          <div class="hospital-name">
+            Cheongdam Wooridul Spine Hospital – International Clinic
+          </div>
+          <div class="hospital-meta">
+            Seoul, Korea · 📞 +82-2-513-8452 ·
+            <a href="https://www.wooridul.com" target="_blank" rel="noreferrer">
+              www.wooridul.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-</Layout>
 
+  <style>
+    .page-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* HERO */
+    .hero {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.2fr);
+      gap: 2.2rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      color: #a7f3d0;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin: 0 0 0.9rem;
+    }
+
+    @media (min-width: 900px) {
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+    }
+
+    .accent {
+      color: #22c55e;
+    }
+
+    .hero-text {
+      font-size: 0.96rem;
+      color: #e5e7eb;
+      max-width: 40rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 0.4rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    .btn.primary {
+      background: #22c55e;
+      color: #020617;
+    }
+
+    .btn.primary:hover {
+      background: #4ade80;
+    }
+
+    .btn.ghost {
+      border-color: #374151;
+      color: #e5e7eb;
+      background: transparent;
+    }
+
+    .btn.ghost:hover {
+      border-color: #6ee7b7;
+      color: #bbf7d0;
+    }
+
+    .btn.subtle {
+      border-color: #1f2937;
+      color: #9ca3af;
+      background: transparent;
+    }
+
+    .btn.subtle:hover {
+      border-color: #4b5563;
+      color: #e5e7eb;
+    }
+
+    .hero-meta {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.5rem;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+      color: #6b7280;
+      margin-right: 0.4rem;
+    }
+
+    .meta-text {
+      color: #e5e7eb;
+    }
+
+    .hero-side {
+      min-width: 0;
+    }
+
+    .side-card {
+      border-radius: 18px;
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      background: radial-gradient(circle at top, #0b1120, #020617);
+      padding: 1.2rem 1.2rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .side-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+      color: #f9fafb;
+    }
+
+    .chip-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .chip {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.75rem;
+      color: #e5e7eb;
+    }
+
+    .side-footer {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 0.6rem;
+      margin-top: 0.3rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      margin-top: 0.5rem;
+    }
+
+    .section-header h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1.4rem;
+    }
+
+    .section-header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #d1d5db;
+      max-width: 38rem;
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 1.1rem;
+      margin-top: 1.1rem;
+    }
+
+    .card-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card-grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 950px) {
+      .card-grid.two,
+      .card-grid.three {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: 16px;
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 1rem 1rem 0.9rem;
+      font-size: 0.9rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.86rem;
+      color: #d1d5db;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #a7f3d0;
+      border: 1px solid rgba(45, 212, 191, 0.5);
+      margin-bottom: 0.45rem;
+    }
+
+    /* Societies */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 1rem;
+    }
+
+    .pill-soft {
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.8);
+      font-size: 0.78rem;
+    }
+
+    /* Hospital */
+    .hospital-card {
+      border-radius: 20px;
+      border: 1px solid rgba(45, 212, 191, 0.6);
+      background: linear-gradient(
+        135deg,
+        rgba(6, 95, 70, 0.35),
+        rgba(15, 23, 42, 0.98)
+      );
+      padding: 1.3rem 1.2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .hospital-card h2 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .hospital-card p {
+      margin-bottom: 0.75rem;
+      font-size: 0.86rem;
+    }
+
+    .hospital-body {
+      border-top: 1px solid rgba(16, 185, 129, 0.5);
+      padding-top: 0.6rem;
+    }
+
+    .hospital-name {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .hospital-meta {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+  </style>
+</Layout>

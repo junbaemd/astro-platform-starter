@@ -1,6 +1,6 @@
 ---
 const pageTitle =
-  "Junseok Bae, MD – Endoscopic & Minimally Invasive Spine Surgeon";
+  "Junseok Bae, MD, PhD – Endoscopic & Minimally Invasive Spine Surgeon";
 const pageDescription =
   "Dr. Junseok Bae is a spine surgeon specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression, minimally invasive spine surgery, and data-driven clinical decision support.";
 const siteUrl = "https://junspine.com";
@@ -14,6 +14,9 @@ const siteUrl = "https://junspine.com";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="canonical" href={siteUrl} />
+
+    {/* ✅ Tailwind CDN 추가 – 이게 없어서 글씨만 보였던 것 */}
+    <script src="https://cdn.tailwindcss.com"></script>
 
     {/* Open Graph */}
     <meta property="og:type" content="website" />
@@ -95,7 +98,7 @@ const siteUrl = "https://junspine.com";
             ],
             worksFor: {
               "@type": "MedicalOrganization",
-              name: "Cheongdam Wooridul Spine Hospital"
+              name: "Wooridul Spine Hospital"
             },
             alumniOf: [
               {

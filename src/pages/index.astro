@@ -2,7 +2,7 @@
 const pageTitle =
   "Junseok Bae, MD – Endoscopic & Minimally Invasive Spine Surgeon";
 const pageDescription =
-  "Dr. Junseok Bae is a spine surgeon specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression, minimally invasive spine surgery, and data-driven clinical decision support.";
+  "Dr. Junseok Bae is a spine surgeon specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression, minimally invasive spine surgery, and adult spinal deformity surgery with SRS-based alignment goals.";
 const siteUrl = "https://junspine.com";
 ---
 
@@ -14,7 +14,7 @@ const siteUrl = "https://junspine.com";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="canonical" href={siteUrl} />
 
-    <!-- 🌈 디자인용 기본 스타일 (외부 CSS 없이 동작) -->
+    <!-- 디자인 스타일 -->
     <style>
       :root {
         --bg: #0f172a;
@@ -134,7 +134,6 @@ const siteUrl = "https://junspine.com";
         border-radius: 999px;
         padding: 4px 10px;
         color: var(--text-muted);
-        text-decoration: none;
       }
       .nav-link:hover {
         background: var(--accent-soft);
@@ -199,7 +198,6 @@ const siteUrl = "https://junspine.com";
         margin: 0;
         padding-left: 20px;
         font-size: 14px;
-        color: var(--text-main);
       }
       .list li {
         margin-bottom: 4px;
@@ -262,7 +260,7 @@ const siteUrl = "https://junspine.com";
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
 
-    <!-- schema.org JSON-LD (이전 버전 그대로) -->
+    <!-- schema.org JSON-LD -->
     <script type="application/ld+json">
       {JSON.stringify(
         [
@@ -280,7 +278,7 @@ const siteUrl = "https://junspine.com";
             url: siteUrl,
             image: `${siteUrl}/images/profile.jpg`,
             description:
-              "Dr. Junseok Bae is a spine surgeon based in Seoul, Republic of Korea, specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression and minimally invasive spine surgery.",
+              "Dr. Junseok Bae is a spine surgeon based in Seoul, Republic of Korea, specializing in endoscopic lumbar, thoracic, and cervical (anterior and posterior) decompression, minimally invasive spine surgery, and adult spinal deformity surgery with SRS-based alignment goals.",
             nationality: "Republic of Korea",
             knowsLanguage: ["ko", "en"],
             identifier: [
@@ -332,16 +330,8 @@ const siteUrl = "https://junspine.com";
               "@type": "MedicalOrganization",
               name: "Cheongdam Wooridul Spine Hospital"
             },
-            alumniOf: [
-              {
-                "@type": "CollegeOrUniversity",
-                name: "Johns Hopkins University",
-                sameAs: "https://www.jhu.edu"
-              }
-            ],
             award: [
-              "Parviz Kambin Award (2022)",
-              "Fulbright Fellowship – Addis Ababa University"
+              "Parviz Kambin Award (2022)"
             ],
             hasOccupation: {
               "@type": "Occupation",
@@ -359,7 +349,10 @@ const siteUrl = "https://junspine.com";
               "Posterior endoscopic cervical decompression",
               "Thoracic endoscopy with navigation (TETD)",
               "Minimally invasive spine surgery",
-              "Adult spinal deformity",
+              "Adult spinal deformity surgery",
+              "SRS-Schwab classification",
+              "Sagittal balance and alignment goals",
+              "Proximal junctional kyphosis (PJK) and proximal junctional failure (PJF)",
               "Machine learning risk prediction in spine surgery",
               "Economics of endoscopic spine surgery"
             ],
@@ -485,8 +478,9 @@ const siteUrl = "https://junspine.com";
             about: [
               "Adult spinal deformity",
               "Minimally invasive spine surgery",
-              "Deformity correction",
-              "Clinical and radiographic outcomes"
+              "Hybrid and staged constructs",
+              "Radiographic alignment",
+              "SRS-Schwab classification"
             ]
           },
           {
@@ -535,9 +529,12 @@ const siteUrl = "https://junspine.com";
             about: [
               "Adult spinal deformity",
               "Proximal junctional kyphosis",
+              "PJK",
+              "PJF risk",
               "Machine learning",
               "Random forest",
-              "Risk prediction calculator"
+              "Risk prediction calculator",
+              "SRS alignment targets"
             ]
           },
 
@@ -696,14 +693,15 @@ const siteUrl = "https://junspine.com";
         <section class="section">
           <div class="section-label">Profile</div>
           <h1>Junseok Bae, MD, PhD</h1>
-          <h2>Endoscopic &amp; Minimally Invasive Spine Surgery</h2>
+          <h2>
+            Endoscopic &amp; Minimally Invasive Spine Surgery · Adult Spinal Deformity
+          </h2>
           <p>
             Dr. Junseok Bae is a spine surgeon based in Seoul, Republic of Korea. His
             clinical focus is on endoscopic lumbar, thoracic, and cervical (anterior and
-            posterior) decompression and minimally invasive spine surgery, with a
-            particular interest in thoracic endoscopy with navigation (TETD),
-            motion-preserving cervical procedures, and data-driven decision support in
-            adult spinal deformity.
+            posterior) decompression and minimally invasive spine surgery, as well as adult
+            spinal deformity surgery guided by SRS-Schwab classification and sagittal
+            alignment goals.
           </p>
           <p style="margin-top:8px; font-size:13px; color:var(--text-muted);">
             Cheongdam Wooridul Spine Hospital &middot; Lumbar / Thoracic / Cervical
@@ -711,8 +709,8 @@ const siteUrl = "https://junspine.com";
           </p>
           <div class="chips">
             <span class="chip">Cheongdam Wooridul Spine Hospital</span>
-            <span class="chip">Lumbar / Thoracic / Cervical Endoscopic Surgery</span>
-            <span class="chip">Adult Spinal Deformity &amp; MIS</span>
+            <span class="chip">Endoscopic Lumbar / Thoracic / Cervical Surgery</span>
+            <span class="chip">Adult Spinal Deformity (SRS-Schwab)</span>
           </div>
         </section>
 
@@ -726,6 +724,11 @@ const siteUrl = "https://junspine.com";
               damage and preserving motion.
             </li>
             <li>
+              Active in adult spinal deformity surgery, applying SRS-Schwab classification
+              and sagittal alignment targets (PI–LL, PT, SVA) to optimize long-term
+              function.
+            </li>
+            <li>
               Contributor to the development and refinement of thoracic endoscopy with
               navigation (TETD) and cost-effective endoscopic approaches for thoracic disc
               pathology.
@@ -733,10 +736,6 @@ const siteUrl = "https://junspine.com";
             <li>
               Recipient of the <strong>Parviz Kambin Award (2022)</strong> for
               contributions to endoscopic spine surgery.
-            </li>
-            <li>
-              Active in international education through KOMISS, KOSESS, SMISS
-              Asia-Pacific, ESPINEA, and NSpine.
             </li>
           </ul>
         </section>
@@ -775,6 +774,22 @@ const siteUrl = "https://junspine.com";
                 <li>Posterior endoscopic cervical foraminotomy</li>
                 <li>Posterior endoscopic cervical decompression</li>
                 <li>Minimally invasive posterior decompression for radiculopathy</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h4>Adult Spinal Deformity (MIS &amp; Hybrid)</h4>
+              <ul class="list">
+                <li>
+                  SRS-Schwab–based assessment of coronal and sagittal imbalance in adult
+                  deformity.
+                </li>
+                <li>
+                  Minimally invasive and hybrid constructs for moderate sagittal imbalance.
+                </li>
+                <li>
+                  Risk-stratified planning for PJK/PJF using clinical and machine learning
+                  models.
+                </li>
               </ul>
             </div>
           </div>
@@ -818,8 +833,8 @@ const siteUrl = "https://junspine.com";
                   and endoscopic economics.
                 </li>
                 <li>
-                  Participation in global consensus work on the economics and adoption of
-                  endoscopic spine surgery.
+                  Engagement in global discussions on standards for adult spinal deformity
+                  correction and alignment targets.
                 </li>
               </ul>
             </div>
@@ -874,29 +889,30 @@ const siteUrl = "https://junspine.com";
             </div>
           </div>
 
-          <h4>Cervical &amp; Adult Spinal Deformity</h4>
+          <h4>Adult Spinal Deformity</h4>
           <div class="grid-2" style="margin-bottom:16px;">
-            <div class="card">
-              <div class="card-title">
-                Comparison of Anterior Cervical Foraminotomy and Posterior Cervical
-                Foraminotomy for Treating Single Level Unilateral Cervical Radiculopathy
-              </div>
-              <div class="card-meta">Spine, 2019</div>
-              <p class="card-text">
-                Compares anterior and posterior cervical foraminotomy as motion-preserving
-                alternatives for single-level unilateral cervical radiculopathy, analyzing
-                clinical and radiologic outcomes and approach-specific benefits.
-              </p>
-            </div>
             <div class="card">
               <div class="card-title">
                 Minimally Invasive Spinal Surgery for Adult Spinal Deformity
               </div>
               <div class="card-meta">Neurospine, 2018</div>
               <p class="card-text">
-                Reviews minimally invasive strategies for adult spinal deformity surgery,
-                including staged and hybrid constructs, and discusses when MIS deformity
-                surgery can achieve comparable outcomes to open techniques.
+                Reviews minimally invasive and hybrid strategies for adult spinal deformity
+                using SRS-Schwab classification, highlighting when MIS constructs can
+                achieve acceptable coronal and sagittal correction while reducing
+                morbidity.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-title">
+                Comparative Analysis of Surgical Strategies for Adult Spinal Deformity with
+                Moderate Sagittal Imbalance
+              </div>
+              <div class="card-meta">Multi-center ASD cohort</div>
+              <p class="card-text">
+                Explores different strategies for treating moderate sagittal imbalance in
+                adult spinal deformity, linking radiographic correction (PI–LL, PT, SVA)
+                with clinical outcomes and complication profiles, including PJK/PJF.
               </p>
             </div>
           </div>
@@ -911,9 +927,10 @@ const siteUrl = "https://junspine.com";
               </div>
               <div class="card-meta">Neurospine, 2023</div>
               <p class="card-text">
-                Uses machine learning models trained on a Korean adult spinal deformity
-                database to build an individualized PJK risk calculator, supporting more
-                precise preoperative planning and risk communication.
+                Uses machine learning models trained on an adult spinal deformity database
+                to build an individualized PJK risk calculator, integrating preoperative
+                SRS-Schwab parameters and surgical factors to support risk-stratified
+                planning.
               </p>
               <p class="card-text">
                 Online tool:
